@@ -1,4 +1,4 @@
-// functions for use with the mixin library I am building for FastTrack Projects
+// functions for use with the mixin library I am building for SlowTrail Projects
 // This calculation converts any given pixel size for type into a relative em unit for better responsize typography on smaller and larger than desktop devices.
 @function calculateRem($size) {
   $remSize: $size /16px;
