@@ -1,0 +1,30 @@
+/*================ICON STYLES========================*/
+
+.ft-icon {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+}
+
+%ft-icon-base {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    // margin-right: 10px;
+}
+
+.arrow-icon {
+    background: url(../images/icons/SVG/arrow-right-icon.svg) no-repeat left;
+    @extend %ft-icon-base;
+}
+
+.arrow-icon-alt {
+    background: url(../images/icons/SVG/arrow-right-icon-alt.svg) no-repeat left;
+    @extend %ft-icon-base;
+}
+
+.arrow-icon-blue {
+    background: url(../images/icons/SVG/arrow-right-icon-blue.svg) no-repeat left;
+    @extend %ft-icon-base;
+}

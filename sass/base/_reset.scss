@@ -1,0 +1,18 @@
+/*=================Base Reset Styles==================*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+// This is explictily for Valorem VSO projects not needed in projects outside of that org.
+#view-pages {
+    display: none;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}

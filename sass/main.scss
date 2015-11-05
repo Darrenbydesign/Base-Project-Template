@@ -1,0 +1,30 @@
+// helpers are fundtions and mixins that help make writing code easier in SASS
+@import 'helpers/functions';
+@import 'helpers/mixins';
+// Base styling for module structure
+@import 'base/config'; //variables are stored here for the entire project
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/helper-classes';
+// Layout styling goes here (Any custom layouts that are not built with bootstrap go here)
+// @import 'layout/grid';
+@import 'layout/base-layout';
+// components styling go here (this is where you place things like accordions, navbars, tabs, buttons, etc. they should be made agnostic to your layout so that they can be used anywhere they are needed.)
+@import 'components/forms';
+@import 'components/icons';
+@import 'components/modals';
+@import 'components/buttons';
+@import 'components/gridbox';
+@import 'components/accordions';
+@import 'components/breadcrumbs';
+// Modules are things like Navigation, Headers, Footers, Sidebars, Etc. They are built with components to create larger more structures
+@import 'modules/header';
+@import 'modules/navigation';
+@import 'modules/masthead';
+@import 'modules/sidebar';
+@import 'modules/footer';
+// Pages styling for things that are strictly page designed
+@import 'pages/landing-page';
+@import 'pages/onboarding-page';
+@import 'pages/ems-page';
+@import 'pages/office-365-page';

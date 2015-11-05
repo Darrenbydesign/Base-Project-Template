@@ -1,0 +1,4 @@
+.button {
+    font-family: $segoe-UI-regular;
+    @include button($corp-color);
+}
