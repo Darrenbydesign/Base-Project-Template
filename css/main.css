@@ -253,12 +253,6 @@ label {
   .link-large:hover {
     text-decoration: none; }
 
-.test-svg {
-  height: 150px; }
-
-.check-mark-svg {
-  fill: #0078D7; }
-
 /* =====================$Base-layout Styles===================== */
 .wrap {
   min-height: 100%; }
@@ -325,6 +319,12 @@ select {
 
 .arrow-icon-blue {
   background: url(../images/icons/SVG/arrow-right-icon-blue.svg) no-repeat left; }
+
+.test-svg {
+  height: 150px; }
+
+.check-mark-svg polygon {
+  fill: #0078D7; }
 
 /*================$Modal Styles==================*/
 .button {
