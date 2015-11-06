@@ -3,5 +3,5 @@
     <symbol id="check-icon" class="check-mark-svg">
       <polygon points="24.8 1.1 12.1 20.2 4 13.3 0 17.9 12.7 28.9 30 4.6 " />
     </symbol>
-    <use xlink:href="#check-icon"></use>
+    <use xlink:href="#check-icon" />
   </svg>

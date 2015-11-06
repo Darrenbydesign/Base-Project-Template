@@ -45,14 +45,16 @@
       <div class="container-fluid">
         <div class="row">
           <div id="section-1" class="col-md-12">
-            <object type="image/svg+xml" data="images/icons/SVG/check_grey.svg#check-icon" class="test-svg">
+            <object type="image/svg+xml" data="images/icons/SVG/check_icon.svg#check-icon" class="test-svg">
               Test SVG
             </object>
           </div>
         </div>
         <div class="row">
           <div id="section-2" class="col-md-12">
-           <use xlink:href="#check-icon"></use>
+           <svg>
+             <use xlink:href="images/icons/SVG/check_icon.svg#check-icon#check-icon"></use>
+           </svg>
           </div>
         </div>
         <div class="row">
