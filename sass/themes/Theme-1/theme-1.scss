@@ -1,4 +1,6 @@
-// Color
+//==============================
+//Color variables
+//==============================
 $white: #fff;
 $blue: #0078D7;
 $gray: #4d4d4d;
@@ -11,6 +13,7 @@ $gray-dark: darken($gray, 15%);
 $corp-color: $blue;
 $corp-color-dark: darken($corp-color, 15%);
 $corp-color-light: lighten($corp-color, 15%);
+
 $corp-color-second: $white;
 $corp-color-second-dark: darken($corp-color-second, 15%);
 $corp-color-second-light: lighten($corp-color-second, 15%);
@@ -28,6 +31,9 @@ $base-font-size: 14px;
 $base-font-family: $segoe-UI-regular;
 $base-font-color: $gray;
 
+//==============================
+//Layout variables
+//==============================
 // Borders: Default border-color for containers and other modules using the default theme goes here.
 $base-border-radius: 0px;
 $rounded-border-radius: 50%;
@@ -40,7 +46,9 @@ $fixed-nav-body-padding: 50px; // This variable is for use with sites that use f
 $footer-height: 70px; // This variable is for sites that utilize a sticky footer with an explicit height set to the footer
 $margin-bottom: $footer-height; // This should be added to the body element to compensagte for the absolute position of the footer and its explicit height
 
-// Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
+//==============================
+//Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
+//==============================
 
 // This is where you import the partials and default config 
 @import '../../main';

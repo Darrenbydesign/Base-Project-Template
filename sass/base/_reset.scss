@@ -3,9 +3,8 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+    box-sizing: $default-box-sizing;
 }
-
 
 // This is explictily for VSO projects not needed in projects outside of that org.
 // #view-pages {
