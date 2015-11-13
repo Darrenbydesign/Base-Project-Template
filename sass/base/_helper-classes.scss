@@ -141,3 +141,12 @@
     text-decoration: none;
   }
 }
+// This is a cool animation that turns things from black and white to color! Its currently set to the hover action
+.bw-clr {
+    @include prefix((filter: grayscale(1)), webkit moz ms o);
+    &:hover {
+        @include prefix((filter: grayscale(0)), webkit moz ms o);
+        @include transition(((filter 0.8s ease-in)));
+        transition: -webkit-filter 0.3s ease-in;
+    }
+}

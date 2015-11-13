@@ -348,7 +348,8 @@
         @include font-size(30px);
     }
 }
-
+// This utilizes boostraps existing carousel and modifies the layout a bit for custom tweaks.
+// This needs to be extrapolated to its own unique module soon.
 .ft-carousel {
     background: lighten($gray-light, 40%);
     padding-bottom: 30px;
@@ -384,14 +385,5 @@
             right: auto;
             bottom: auto;
         }
-    }
-}
-
-.bw-clr {
-    @include prefix((filter: grayscale(1)), webkit moz ms o);
-    &:hover {
-        @include prefix((filter: grayscale(0)), webkit moz ms o);
-        @include transition(((filter 0.8s ease-in)));
-        transition: -webkit-filter 0.3s ease-in;
     }
 }
