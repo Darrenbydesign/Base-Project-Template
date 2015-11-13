@@ -7,7 +7,7 @@ $gray-light: lighten($gray, 15%);
 $gray-dark: darken($gray, 15%);
 
 
-// Corp-color: these are the base color that start any project using the initial theme. Enjoy
+// Corp-color: these are the base colors for this theme If a color is not redefined here the default styles will be used from the base config.scss file
 $corp-color: $blue;
 $corp-color-dark: darken($corp-color, 15%);
 $corp-color-light: lighten($corp-color, 15%);
@@ -23,30 +23,24 @@ $segoe-UI-light: "Segoe UI Light",helvetica,arial,sans-serif;
 $segoe-UI-semilight: "Segoe UI Semilight",helvetica,arial,sans-serif;
 $segoe-UI-semibold: "Segoe UI Semibold",helvetica,arial,sans-serif;
 
-// Font: Declare your fonts sizes and base color here
-$base-font-size: 16px;
+// Font: Declare your fonts sizes and base coloring here anything not defined here will use the default settings
+$base-font-size: 14px;
 $base-font-family: $segoe-UI-regular;
 $base-font-color: $gray;
+
 // Borders: Default border-color for containers and other modules using the default theme goes here.
 $base-border-radius: 0px;
 $rounded-border-radius: 50%;
 $base-border-color: $gray-light;
-// Navigation
-$fixed-nav-body-padding: 50px;
-// Footer
-$footer-height: 70px;
-$margin-bottom: $footer-height;
-// Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
-$masthead-image:'../images/masthead-image-4.png';
-$video-fallback-image: '../images/video-image.png';
-$onboarding-bg: '../images/onboarding-bg.jpg';
-$ems-bg: '../images/BannersIdentiy_2000x500.png';
-$manage-bg:'../images/manage-apps.png';
-$apps-bg: '../images/app-office-image.png';
-$announce-bg: '../images/office-365-2.png';
-$mobile-solutions-bg: '../images/mobile-office-image.png';
-$get-started-bg: '../images/get-started.png';
-$surface-bg: '../images/surface-bg.png';
-$resources-image: '../images/resources-2.png';
 
+// Navigation variables
+$fixed-nav-body-padding: 50px; // This variable is for use with sites that use fixed headers
+
+// Footer
+$footer-height: 70px; // This variable is for sites that utilize a sticky footer with an explicit height set to the footer
+$margin-bottom: $footer-height; // This should be added to the body element to compensagte for the absolute position of the footer and its explicit height
+
+// Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
+
+// This is where you import the partials and default config 
 @import '../../main';

@@ -138,17 +138,17 @@ h6 {
       line-height: 1.111em; } }
 
 body {
-  color: #5d5c5c;
+  color: #4d4d4d;
   font-family: "Segoe UI", helvetica, arial, sans-serif;
-  font-size: 16px;
-  font-size: 1em; }
+  font-size: 14px;
+  font-size: 0.875em; }
 
 label {
   font-family: "Segoe UI Light", helvetica, arial, sans-serif; }
 
 /*=====================helper classes to be used when you want to tweak other elements but don't want to muddy your CSS=========================*/
 .font-blue {
-  color: #002050; }
+  color: #0078D7; }
 
 .font-white {
   color: #fff; }
@@ -157,10 +157,10 @@ label {
   color: #DB3A00; }
 
 .lightGray {
-  color: #a9a8a8; }
+  color: #737373; }
 
 .font-gray {
-  color: #838282; }
+  color: #4d4d4d; }
 
 .border-right {
   border-right: 3px solid #fff; }
@@ -172,7 +172,7 @@ label {
   background: #D3D3D3; }
 
 .gray-bg {
-  background: #838282; }
+  background: #4d4d4d; }
 
 .purple-bg {
   background: #5C005C; }
@@ -555,18 +555,18 @@ select {
   .flex-title {
     margin-left: 15px; } }
 .header {
-  background: #838282; }
+  background: #4d4d4d; }
 
 /*================$Navigation Styles====================== */
 .navbar-inverse .ft-nav {
-  border-right: 1px solid #a9a8a8; }
+  border-right: 1px solid #737373; }
   .navbar-inverse .ft-nav > li > a {
     color: #fff; }
   .navbar-inverse .ft-nav:last-child {
     border-right: 0; }
 
 .ft-nav {
-  border-right: 1px solid #a9a8a8; }
+  border-right: 1px solid #737373; }
   .ft-nav > li > a {
     color: #fff; }
   .ft-nav:last-child {
@@ -579,12 +579,12 @@ select {
     color: #fff; }
 
 .footer {
-  background: white;
+  background: #d9d9d9;
   position: absolute;
   bottom: 0;
   height: 70px;
   width: 100%;
-  color: #4d4d4d; }
+  color: #fff; }
   .footer a {
     text-decoration: none; }
 
@@ -790,7 +790,7 @@ select {
   display: flex !important; }
 
 .lower-gradient-bg {
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(169, 168, 168, 0.3)), #fff; }
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(115, 115, 115, 0.3)), #fff; }
 
 .onboarding-request-container {
   padding: 0 0 30px; }
@@ -799,7 +799,7 @@ select {
       padding: 30px 0 30px 0; } }
 
 .ob-request-link {
-  color: #5d5c5c;
+  color: #4d4d4d;
   font-family: "Segoe UI Semibold", helvetica, arial, sans-serif;
   font-size: 22px;
   font-size: 1.375em;
@@ -871,7 +871,7 @@ select {
       align-items: center; } }
 
 .cl-item {
-  color: #5d5c5c;
+  color: #4d4d4d;
   margin: 10px 15px;
   width: 300px;
   height: 150px; }
@@ -887,7 +887,7 @@ select {
       font-size: 1.875em; } }
 
 .ft-carousel {
-  background: white;
+  background: #d9d9d9;
   padding-bottom: 30px;
   margin-bottom: 35px; }
   .ft-carousel .ft-carousel-indicators li {
@@ -897,14 +897,14 @@ select {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #a9a8a8;
+    background-color: #737373;
     border: 1px solid #FFF;
     border-radius: 10px; }
   .ft-carousel .ft-carousel-indicators li.active {
     width: 20px;
     height: 20px;
     margin: 0;
-    background-color: #5d5c5c; }
+    background-color: #272727; }
   .ft-carousel .carousel-caption {
     position: relative;
     left: auto;
@@ -1048,10 +1048,10 @@ select {
   padding: 0; }
 
 .pt-heading {
-  background: #838282;
+  background: #4d4d4d;
   font-size: 20px;
   font-size: 1.25em;
-  color: #4d4d4d;
+  color: #fff;
   padding: 10px;
   margin-bottom: 0; }
 
@@ -1084,13 +1084,13 @@ select {
     list-style: none;
     height: 100%; }
   .list-section li {
-    background: white;
+    background: #f3f3f3;
     padding: 10px 15px;
     margin-left: -2.5em; }
     .list-section li:nth-child(2) {
-      background: white; }
+      background: #d9d9d9; }
     .list-section li:nth-child(3) {
-      background: whitesmoke; }
+      background: silver; }
 
 .amount {
   color: #fff;
@@ -1175,11 +1175,11 @@ select {
       margin: 0 15px; } }
 
 .resources-bg {
-  background: white;
+  background: #d9d9d9;
   margin-bottom: 30px; }
   @media only screen and (min-width: 1200px) {
     .resources-bg {
-      background: url("../images/resources.png") no-repeat center right, white;
+      background: url("../images/resources.png") no-repeat center right, #d9d9d9;
       -ms-background-size: contain;
       -o-background-size: contain;
       background-size: contain;
@@ -1258,4 +1258,4 @@ select {
 .sl-info {
   margin-top: 50px; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=theme-1.css.map */
