@@ -1,0 +1,6 @@
+.masthead-info-container {
+  color: $white;
+  @include breakpoint-lg {
+    margin-top: 100px;
+  }
+}

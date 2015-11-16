@@ -20,14 +20,17 @@
 @import 'components/svg';
 @import 'components/modals';
 @import 'components/buttons';
-// @import 'components/gridbox';
 @import 'components/accordions';
 @import 'components/breadcrumbs';
 
 // Modules are things like Navigation, Headers, Footers, Sidebars, Etc. They are built with components to create larger more structures
-@import 'modules/navigation';
 @import 'modules/masthead';
-@import 'modules/sidebar';
+@import 'modules/status';
+@import 'modules/wizards';
+@import 'modules/navigation';
+@import 'modules/slide-nav';
+@import 'modules/sidebars';
+// @import 'modules/gridbox';
 
 // Pages styling for things that are strictly page designed
 // @import 'pages/landing-page';

@@ -1,5 +1,4 @@
 // Default schemes
-
 //==============================
 //Color variables
 //==============================
@@ -11,7 +10,6 @@ $yellow: #F7E98C !default;
 $blue: #002050 !default;
 $green: #6db55e !default;
 $purple:#5C005C !default;
-
 // Base Colors for our gray colors. This is mostly for text setting
 $gray-base: $black !default;
 $gray: #838282 !default;
@@ -24,19 +22,39 @@ $corp-color-light: lighten($corp-color, 15%) !default;
 $corp-color-second: $white !default;
 $corp-color-second-dark: darken($corp-color-second, 15%) !default;
 $corp-color-second-light: lighten($corp-color-second, 15%) !default;
-
 //==============================
 //Typography variables
 //==============================
-$segoe-UI-regular: "Segoe UI",helvetica,arial,sans-serif;
-$segoe-UI-light: "Segoe UI Light",helvetica,arial,sans-serif;
-$segoe-UI-semilight: "Segoe UI Semilight",helvetica,arial,sans-serif;
-$segoe-UI-semibold: "Segoe UI Semibold",helvetica,arial,sans-serif;
-
+$segoe-UI-regular: "Segoe UI",
+helvetica,
+arial,
+sans-serif;
+$segoe-UI-light: "Segoe UI Light",
+helvetica,
+arial,
+sans-serif;
+$segoe-UI-semilight: "Segoe UI Semilight",
+helvetica,
+arial,
+sans-serif;
+$segoe-UI-semibold: "Segoe UI Semibold",
+helvetica,
+arial,
+sans-serif;
 // Font: Declare your fonts sizes and base color here
 $base-font-size: 16px !default;
 $base-font-family: $segoe-UI-regular !default;
 $base-font-color: $gray-dark !default;
+// TYPESCALE CREATOR
+$base-font-size: 16px;
+$base-line-height: 1.3;
+$scale: 1.5;
+$breakpoints: ( small: 480px, medium: 960px, large: 1200px);
+$breakpoint-sizes: ( 
+  small: ( base-font-size: 16px, base-line-height: 1.3, scale: 1.25), 
+  medium: ( base-font-size: 18px, base-line-height: 1.4, scale: 1.4), 
+  large: ( base-font-size: 22px, base-line-height: 1.5, scale: 1.5)
+  );
 
 //==============================
 //Layout variables
@@ -47,30 +65,17 @@ $default-box-sizing: border-box !default;
 $base-border-radius: 0px !default;
 $rounded-border-radius: 50% !default;
 $base-border-color: $gray !default;
-
+// BOX-SHADOW
+$brand-box-shadow: 0px 1px 5px rgba($gray, 0.2) !default;
 // Navigation
 $fixed-nav-body-padding: 50px !default;
-
 // Footer
 $footer-height: 70px !default;
 $margin-bottom: $footer-height !default;
-
 //==============================
 //Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
 //==============================
-
-$masthead-image:'http://placehold.it/2000x500' !default;
-$video-fallback-image: 'http://placekitten.com/2000/300' !default;
-$onboarding-bg: 'http://placekitten.com/2000/600' !default;
-$ems-bg: 'http://placekitten.com/2000/800' !default;
-$manage-bg: 'http://placekitten.com/2500/800' !default;
-$apps-bg: 'http://placekitten.com/3000/500' !default;
-$mobile-solutions-bg: 'http://placekitten.com/1400/500' !default;
-$get-started-bg: '../images/get-started.png' !default;
-$announce-bg: '../images/office-365.png' !default;
-$surface-bg: '../images/surface-bg.png' !default;
-$resources-image: '../images/resources.png' !default;
-$arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default
-
+$arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default;
 // NOTE: the value "!default" is used to define base values.
-//If no value is given to a component the above values will be used.
+
+//If no value is given to a variable in another theme file the above values will be used.

@@ -1,17 +1,16 @@
-/*=================Base Reset Styles==================*/
+/*
+=================================================================== 
+ $Reset - Reset styles to reset browser defaults go here
+===================================================================
+*/
 
 *,
 *:before,
 *:after {
-    box-sizing: $default-box-sizing;
+  box-sizing: $default-box-sizing;
 }
 
-// This is explictily for VSO projects not needed in projects outside of that org.
-// #view-pages {
-//     display: none;
-// }
-
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }

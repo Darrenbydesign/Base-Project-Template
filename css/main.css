@@ -367,7 +367,7 @@ select {
   font-family: "Segoe UI", helvetica, arial, sans-serif;
   background-color: #0078D7;
   color: #fff; }
-  .button {
+  .button, .button-block {
     border: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -380,7 +380,7 @@ select {
     -o-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px; }
-    .button:hover {
+    .button:hover, .button-block:hover {
       cursor: pointer; }
   .button a {
     color: #fff;
@@ -388,6 +388,19 @@ select {
   .button:hover {
     background-color: #0066b6;
     border-color: #004881;
+    color: #fff;
+    text-decoration: none; }
+
+.button-block {
+  background-color: #002050;
+  color: #fff;
+  width: 100%; }
+  .button-block a {
+    color: #fff;
+    text-decoration: none; }
+  .button-block:hover {
+    background-color: #001b44;
+    border-color: #001330;
     color: #fff;
     text-decoration: none; }
 
@@ -531,5 +544,11 @@ select {
   color: #fff; }
   .onboarding-link a {
     color: #fff; }
+
+.masthead-info-container {
+  color: #fff; }
+  @media only screen and (min-width: 1200px) {
+    .masthead-info-container {
+      margin-top: 100px; } }
 
 /*# sourceMappingURL=main.css.map */
