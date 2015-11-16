@@ -1,4 +1,8 @@
-/*=================Base Reset Styles==================*/
+/*
+=================================================================== 
+ $Reset - Reset styles to reset browser defaults go here
+===================================================================
+*/
 *,
 *:before,
 *:after {
@@ -8,7 +12,11 @@ html {
   position: relative;
   min-height: 100%; }
 
-/*================$Typograpghy==================*/
+/*
+=================================================================== 
+ $Typography - All default styling for typpgraphy should go here
+===================================================================
+*/
 html {
   font-size: 100%;
   font-family: "Segoe UI", helvetica, arial, sans-serif; }
@@ -137,8 +145,8 @@ h6 {
 body {
   color: #4d4d4d;
   font-family: "Segoe UI", helvetica, arial, sans-serif;
-  font-size: 14px;
-  font-size: 0.875em; }
+  font-size: 16px;
+  font-size: 1em; }
 
 label {
   font-family: "Segoe UI Light", helvetica, arial, sans-serif; }
@@ -367,7 +375,7 @@ select {
   font-family: "Segoe UI", helvetica, arial, sans-serif;
   background-color: #0078D7;
   color: #fff; }
-  .button {
+  .button, .button-block, .button-small {
     border: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -380,12 +388,38 @@ select {
     -o-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px; }
-    .button:hover {
+    .button:hover, .button-block:hover, .button-small:hover {
       cursor: pointer; }
   .button a {
     color: #fff;
     text-decoration: none; }
   .button:hover {
+    background-color: #0066b6;
+    border-color: #004881;
+    color: #fff;
+    text-decoration: none; }
+
+.button-block {
+  background-color: #0078D7;
+  color: #fff;
+  width: 100%; }
+  .button-block a {
+    color: #fff;
+    text-decoration: none; }
+  .button-block:hover {
+    background-color: #0066b6;
+    border-color: #004881;
+    color: #fff;
+    text-decoration: none; }
+
+.button-small {
+  background-color: #0078D7;
+  color: #fff;
+  padding: 6px 10px; }
+  .button-small a {
+    color: #fff;
+    text-decoration: none; }
+  .button-small:hover {
     background-color: #0066b6;
     border-color: #004881;
     color: #fff;
@@ -511,6 +545,244 @@ select {
 @media only screen and (min-width: 1224px) {
   .flex-title {
     margin-left: 15px; } }
+.masthead-info-container {
+  color: #fff; }
+  @media only screen and (min-width: 1200px) {
+    .masthead-info-container {
+      margin-top: 100px; } }
+
+/*
+=================================================================== 
+ $Status - status indicators are used inside of the tables under the 
+ columns labeled Status. This is used instead of icons because its
+ nice to use CSS instead of loading images.
+===================================================================
+*/
+.status {
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline; }
+
+.status-created {
+  background: #fff;
+  border: 2px solid #004d8b; }
+
+.status-closed {
+  background: #004d8b; }
+
+.status-more-info {
+  background: #a40002; }
+
+.status-pending, .status-in-progress {
+  background: #F7E98C; }
+
+.status-reopened, .status-opened {
+  background: #249eff; }
+
+.status-solution {
+  background: #6db55e; }
+
+/*
+=================================================================== 
+ $Wizards - This is where all wizard styles go. 
+ This module can be abstracted more but for now its pretty versatile
+===================================================================
+*/
+.wizard-form-container {
+  background: #fff;
+  box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.2);
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 10px 15px;
+  min-height: 30vmax; }
+
+.wizard-title {
+  color: #0078D7;
+  text-align: center; }
+
+.wizard-form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding: 0;
+  /* For IE since it hates changes and doesnt like viewport units :-( */
+  margin-top: 20px;
+  /* For IE since it hates changes and doesnt like viewport units :-( */
+  margin-bottom: 30px;
+  margin-top: 1vmax;
+  margin-bottom: 1.5vmax; }
+  @media (min-width: 40em) {
+    .wizard-form {
+      flex-flow: row wrap;
+      align-items: center; } }
+
+.wizard-form-item {
+  margin: 10px 15px; }
+
+.wizard-button-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  @media (min-width: 40em) {
+    .wizard-button-list {
+      flex-flow: row wrap;
+      -webkit-box-pack: space-between;
+      -moz-box-pack: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-justify-content: space-between;
+      justify-content: space-between; } }
+  .wizard-button-list li {
+    margin: 10px 15px;
+    align-self: center; }
+  .wizard-button-list .wizard-back-button {
+    order: 3; }
+    @media (min-width: 40em) {
+      .wizard-button-list .wizard-back-button {
+        order: 1; } }
+  .wizard-button-list .wizard-cancel-button {
+    order: 4; }
+    @media (min-width: 40em) {
+      .wizard-button-list .wizard-cancel-button {
+        order: 2; } }
+  .wizard-button-list .wizard-next-button {
+    order: 2; }
+    @media (min-width: 40em) {
+      .wizard-button-list .wizard-next-button {
+        order: 3; } }
+  .wizard-button-list .wizard-finish-button {
+    order: 1; }
+    @media (min-width: 40em) {
+      .wizard-button-list .wizard-finish-button {
+        order: 4; } }
+
+.wizard-block-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0; }
+  @media (min-width: 40em) {
+    .wizard-block-list {
+      flex-flow: row wrap;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center; } }
+  .wizard-block-list li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: 10px 15px;
+    width: auto; }
+    @media (min-width: 40em) {
+      .wizard-block-list li {
+        width: 50%; } }
+    @media (min-width: 64em) {
+      .wizard-block-list li {
+        width: 30.33%; } }
+    .wizard-block-list li:last-child {
+      align-self: flex-end; }
+
+.wizard-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transition: border 0.3s ease-in;
+  -moz-transition: border 0.3s ease-in;
+  -ms-transition: border 0.3s ease-in;
+  -o-transition: border 0.3s ease-in;
+  transition: border 0.3s ease-in;
+  background: #fff;
+  border: 2px solid #0d0d0d;
+  padding: 10px 15px;
+  height: auto; }
+  @media (min-width: 40em) {
+    .wizard-block {
+      align-self: auto; } }
+
+.wizard-block-img {
+  text-align: center;
+  margin-top: 20px; }
+
+.wizard-block-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1 0 auto;
+  -moz-box-flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #272727; }
+  .wizard-block-content p {
+    -webkit-box-flex: 1 0 auto;
+    -moz-box-flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; }
+
+.wizard-block-title {
+  text-align: center;
+  color: #272727; }
+
+.wizard-intro-text {
+  width: 30vmax;
+  padding-bottom: 2vmax;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 40em) {
+    .wizard-intro-text {
+      width: 60vmin; } }
+
 /*================$Navigation Styles====================== */
 .navbar-inverse .ft-nav {
   border-right: 1px solid #737373; }
@@ -531,5 +803,68 @@ select {
   color: #fff; }
   .onboarding-link a {
     color: #fff; }
+
+.slide-nav-container {
+  background: #004d8b;
+  color: #fff;
+  -webkit-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  margin-bottom: 0; }
+  .slide-nav-container .nav-justified > li > a {
+    border: 0;
+    border-bottom: 0;
+    -webkit-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px; }
+    .slide-nav-container .nav-justified > li > a:hover, .slide-nav-container .nav-justified > li > a:focus, .slide-nav-container .nav-justified > li > a:active {
+      -webkit-border-radius: 0px;
+      -ms-border-radius: 0px;
+      -o-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px; }
+
+.sl-nav > li > a {
+  font-family: "Segoe UI Light", helvetica, arial, sans-serif;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 0;
+  font-size: 30px;
+  font-size: 1.875em;
+  -webkit-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px; }
+  .sl-nav > li > a:hover, .sl-nav > li > a:focus, .sl-nav > li > a:active {
+    background: #004d8b;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px; }
+    .sl-nav > li > a:hover:after, .sl-nav > li > a:focus:after, .sl-nav > li > a:active:after {
+      content: "";
+      position: absolute;
+      left: 40%;
+      bottom: -25px;
+      border-width: 25px 25px 0px;
+      border-style: solid;
+      border-color: #004d8b transparent;
+      z-index: 1; }
+
+.slide-nav-bg {
+  background: #0078D7; }
+
+.sl-content {
+  color: #fff; }
+
+.sl-info {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=theme-1.css.map */
