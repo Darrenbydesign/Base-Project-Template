@@ -1,7 +1,7 @@
 //==============================
 //Color variables
 //==============================
-$black: #000 !default;
+$black: #000000 !default;
 $white: #fff !default;
 $red: #a40002 !default;
 $orange: #DB3A00 !default;
@@ -18,8 +18,8 @@ $gray-dark: darken($gray, 15%) !default;
 
 // CORP-COLOR: THESE ARE THE BASE COLOR THAT START ANY PROJECT USING THE INITIAL THEME. ENJOY
 $corp-color: $blue !default;
-$corp-color-dark: darken($corp-color, 15%) !default; //blue
-$corp-color-light: lighten($corp-color, 15%) !default; //
+$corp-color-dark: shade($corp-color, 15%) !default;
+$corp-color-light: tint($corp-color, 15%) !default;
 $corp-color-second: $white !default;
 $corp-color-second-dark: darken($corp-color-second, 15%) !default;
 $corp-color-second-light: lighten($corp-color-second, 15%) !default;
@@ -28,33 +28,15 @@ $corp-color-second-light: lighten($corp-color-second, 15%) !default;
 //Typography variables
 //==============================
 
-$segoe-UI-regular: "Segoe UI",helvetica,arial,sans-serif;
-$segoe-UI-light: "Segoe UI Light",helvetica,arial,sans-serif;
-$segoe-UI-semilight: "Segoe UI Semilight",helvetica,arial,sans-serif;
-$segoe-UI-semibold: "Segoe UI Semibold",helvetica,arial,sans-serif;
+$segoe-UI-regular: '()',helvetica,arial,sans-serif;
+$segoe-UI-light: 'Segoe UI Light',helvetica,arial,sans-serif;
+$segoe-UI-semilight: 'Segoe UI Semilight',helvetica,arial,sans-serif;
+$segoe-UI-semibold: 'Segoe UI Semibold',helvetica,arial,sans-serif;
 
 // FONT: DECLARE YOUR FONTS SIZES AND BASE COLOR HERE
 $base-font-size: 16px !default;
 $base-font-family: $segoe-UI-regular !default;
 $base-font-color: $gray-dark !default;
-
-// TYPESCALE CREATOR
-$base-font-size: 16px;
-$base-line-height: 1.3;
-$scale: 1.5;
-$breakpoints: ( 
-  small: 480px, 
-  medium: 960px, 
-  large: 1200px
-  );
-$breakpoint-sizes: ( 
-  small: ( base-font-size: 16px, base-line-height: 1.3, scale: 1.25),
-
-  medium: ( base-font-size: 18px, base-line-height: 1.4, scale: 1.4),
-
-  large: ( base-font-size: 22px, base-line-height: 1.5, scale: 1.5)
-
-  );
 
 //==============================
 //Layout variables
@@ -82,6 +64,6 @@ $margin-bottom: $footer-height !default;
 //Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
 //==============================
 $arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default;
-// NOTE: the value "!default" is used to define base values.
+// NOTE: the value '!default' is used to define base values.
 
 //If no value is given to a variable in another theme file the above values will be used.

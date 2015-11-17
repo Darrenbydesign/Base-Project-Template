@@ -11,7 +11,7 @@
 }
 
 @function calculateBreakpoint($bp-size) {
-  $breapointSizeEms: $bp-size /16px;
+  $breapointSizeEms: $bp-size / 16px;
   @return $breapointSizeEms * 1em;
 }
 
@@ -44,6 +44,23 @@
   @return dynamicTextColor($color);
 }
 
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
 // This bad boy uses Sass to dynamically change the text color to black or white depending on the backrground color of the element you use it in! That is amazing
 $dark-text: #4d4d4d;
 $light-text: #fff;
@@ -56,18 +73,28 @@ $light-text: #fff;
   }
 }
 
+
+
+// Function to remove units from a measurement
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0  +  1);
+  }
+  @return $number;
+}
+
 // Power function borrowed from the compass framework
-@function pow($x, $y) {
-  $ret: 1;
-  @if $y > 0 {
-    @for $i from 1 through $y {
-      $ret: $ret * $x;
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp >= 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
     }
   }
-  @else {
-    @for $i from $y to 0 {
-      $ret: $ret / $x;
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
     }
   }
-  @return $ret;
+  @return $value;
 }

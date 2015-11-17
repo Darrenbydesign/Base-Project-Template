@@ -5,20 +5,15 @@
   transition: $prop;
 }
 
-@mixin border-radius($r) {
-  border-radius: $r;
-  -webkit-border-radius: $r;
-  -moz-border-radius: $r;
-}
-
 // Mixins simple solutions to complicated CSS problems... thank me later
-// Vendor Prefix generator for properties that need them. This one is to be used for general cases where there isn't already a mixin built with the prefixes in place.
+// Vendor Prefix generator for properties that need them. 
+// This one is to be used for general cases where there isn't already a mixin built with the prefixes in place.
 @mixin prefix($map, $vendors: webkit moz ms o) {
   @each $prop,
   $value in $map {
     @if $vendors {
       @each $vendor in $vendors {
-        #{"-" + $vendor + "-" + $prop}: #{$value};
+        #{'-' + $vendor + '-' + $prop}: #{$value};
       }
     }
     // add regular property to the end of list without vendor prefixes
@@ -28,10 +23,12 @@
 
 // Simple mixin for border-radius changes. just include this mixin and provide a value and you're good to go.
 @mixin border-radius($radius) {
-  @include prefix((border-radius: $radius), webkit ms o moz);
+  // @warn 'The `border-radius()` mixin will be deprecated in version 2.0.';
+  @include prefix( (border-radius: $radius), webkit ms o moz);
 }
 
-// Button mixin creates a button. All it needs is a color added to background yay! No more using the extend class on the button each time bloating the output CSS.
+// Button mixin creates a button. All it needs is a color added to background yay! 
+// No more using the extend class on the button each time bloating the output CSS.
 $Placeholder-Selectors: ();
 @mixin button($color, $extend: true) {
   @include button-static($extend);
@@ -77,14 +74,15 @@ $Placeholder-Selectors: ();
   }
 }
 
-// This mixin calls on the calculateRem function in the functions partial file it will output the pixel size first then the rem unit for browswer that support it (IE9+).
+// This mixin calls on the calculateRem function in the functions partial file it will output the pixel size 
+// first then the rem unit for browswer that support it (IE9+).
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateEm($size);
   // font-size: calculateRem($size);
 }
 
-// Responsive image
+// RESPONSIVE IMAGE
 //
 // Keep images from scaling beyond the width of their parents.
 @mixin img-responsive($display: block) {
@@ -99,10 +97,13 @@ $mq-small: 320px;
 $mq-medium: 768px;
 $mq-large: 1200px;
 $mq-xlarge: 1600px;
-// These mixins help with creating media queries. They can now be more semantic instead of worrying about the syntax of the @media call you can just call the mixin and place in your content. This does all that for you!
-// Large screen breakpoints (ex. desktop views)
+
+// These mixins help with creating media queries. They can now be more semantic instead of worrying about the 
+// syntax of the @media call you can just call the mixin and place in your content. This does all that for you!
+
+// LARGE SCREEN BREAKPOINTS (EX. DESKTOP VIEWS)
 @mixin breakpoint-xl {
-  // large screen breakpoints (used only when absolutely necessary. targeting over 1800px)
+  // LARGE SCREEN BREAKPOINTS (USED ONLY WHEN ABSOLUTELY NECESSARY. TARGETING OVER 1800PX)
   @media only screen and (min-width: $mq-xlarge) {
     @content;
   }
@@ -114,7 +115,7 @@ $mq-xlarge: 1600px;
   }
 }
 
-// medium screen breakpoints (ex. small laptops,tablets,)
+// MEDIUM SCREEN BREAKPOINTS (EX. SMALL LAPTOPS,TABLETS,)
 @mixin breakpoint-md {
   @media only screen and (min-width: $mq-medium) and (max-width: 1024px) {
     @content;
@@ -166,7 +167,9 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   }
 }
 
-// This mixin will alleviate the need to write the vendor prefixes your self for animations. Now all you have to do is call this mixin and enter your animation name and enter your actions.
+// This mixin will alleviate the need to write the vendor prefixes yourself for animations. 
+// Now all you have to do is call this mixin and enter your animation name and enter your actions.
+
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
@@ -185,7 +188,8 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   }
 }
 
-// This mixin can to be coupled with the keyframes animation above. Use this one to give animation action values like timing and looping, etc.
+// This mixin can to be coupled with the keyframes animation above. 
+// Use this one to give animation action values like timing and looping, etc.
 @mixin animation($str) {
   @include prefix((animation: $str), webkit moz ms o);
 }
@@ -263,36 +267,3 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   -webkit-order: $value;
   order: $value;
 }
-
-// Typescale Mixins
-//   $font-sizes: (p,bq,ssh,sh,h,hero);
-// @mixin generate-type-scale($label, $base-font-size, $base-line-height, $scale) {
-//   $scale-value: index($font-sizes, $label) -1;
-//   // Setup initial font size formula
-//   $fs: $base-font-size * pow($scale, $scale-value);
-//   // Setup initial line height formula
-//   $lh: $base-font-size * $base-line-height / $fs;
-//   @while $lh < 1 {
-//     $lh: $lh + $lh;
-//   }
-//   font-size: $fs;
-//   line-height: $lh;
-// }
-// @mixin type-scale-breakpoint($name) {
-//   @if not map-has-key($breakpoints, $name) {
-//     @warn "Invalid breakpoint `#{$name}`.";
-//   } @else {
-//       @if map-get($breakpoints, $name) == '' {
-//         @content;
-//       } @else {
-//         @media (min-width: map-get($breakpoints, $name)) {
-//         @content;
-//       }
-//     }
-//   }
-// }
-// @each $label in $font-sizes {
-//     %#{$label} {
-//         @include generate-type-scale($label, $base-font-size, $base-line-height, $scale);
-//     }
-//   }

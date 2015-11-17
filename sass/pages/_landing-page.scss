@@ -67,73 +67,73 @@
 }
 
 .wkl-icon-1 {
-    background: url("../images/icons/collaboration-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/collaboration-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-2 {
-    background: url("../images/icons/device management-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/device management-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-3 {
-    background: url("../images/icons/email-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/email-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-4 {
-    background: url("../images/icons/communications-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/communications-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-5 {
-    background: url("../images/icons/identity-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/identity-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-6 {
-    background: url("../images/icons/application management-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/application management-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-7 {
-    background: url("../images/icons/productivity-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/productivity-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-8 {
-    background: url("../images/icons/data security-detail icon.png") no-repeat center, $corp-color;
+    background: url('../images/icons/data security-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url("../images/icons/plus-icon.png") no-repeat center, $corp-color-dark;
+        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -298,7 +298,7 @@
 .cta-heading {
     color: $white;
     &:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 44%;
         bottom: 0;

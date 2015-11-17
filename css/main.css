@@ -17,9 +17,21 @@ html {
  $Typography - All default styling for typpgraphy should go here
 ===================================================================
 */
+@media screen and (min-width: 480px) {
+  .title-header {
+    font-size: 39.0625px;
+    line-height: 1.06496; } }
+@media screen and (min-width: 960px) {
+  .title-header {
+    font-size: 69.1488px;
+    line-height: 1.45773; } }
+@media screen and (min-width: 1200px) {
+  .title-header {
+    font-size: 111.375px;
+    line-height: 1.18519; } }
 html {
   font-size: 100%;
-  font-family: "Segoe UI", helvetica, arial, sans-serif; }
+  font-family: "()", helvetica, arial, sans-serif; }
 
 @font-face {
   font-family: 'su';
@@ -144,12 +156,15 @@ h6 {
 
 body {
   color: #5d5c5c;
-  font-family: "Segoe UI", helvetica, arial, sans-serif;
+  font-family: "()", helvetica, arial, sans-serif;
   font-size: 16px;
   font-size: 1em; }
 
 label {
   font-family: "Segoe UI Light", helvetica, arial, sans-serif; }
+
+.title-header {
+  color: #0066b6; }
 
 /*=====================helper classes to be used when you want to tweak other elements but don't want to muddy your CSS=========================*/
 .font-blue {
@@ -305,10 +320,10 @@ body {
       padding: 0 15px; } }
 
 /* ===========$Form Styles========================= */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="search"] {
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='search'] {
   -webkit-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
@@ -372,7 +387,7 @@ select {
 
 /*================$Modal Styles==================*/
 .button {
-  font-family: "Segoe UI", helvetica, arial, sans-serif;
+  font-family: "()", helvetica, arial, sans-serif;
   background-color: #0078D7;
   color: #fff; }
   .button, .button-block, .button-small {
@@ -476,7 +491,7 @@ select {
     padding-right: 30px;
     text-align: left; } }
 .flex-breadcrumb li a:after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 0;
   height: 0;
@@ -490,7 +505,7 @@ select {
   z-index: 2; }
 
 .flex-breadcrumb li a:before {
-  content: " ";
+  content: ' ';
   display: block;
   width: 0;
   height: 0;
@@ -573,10 +588,10 @@ select {
 
 .status-created {
   background: #fff;
-  border: 2px solid #004d8b; }
+  border: 2px solid #0066b6; }
 
 .status-closed {
-  background: #004d8b; }
+  background: #0066b6; }
 
 .status-more-info {
   background: #a40002; }
@@ -805,7 +820,7 @@ select {
     color: #fff; }
 
 .slide-nav-container {
-  background: #004d8b;
+  background: #0066b6;
   color: #fff;
   -webkit-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -841,7 +856,7 @@ select {
   -moz-border-radius: 0px;
   border-radius: 0px; }
   .sl-nav > li > a:hover, .sl-nav > li > a:focus, .sl-nav > li > a:active {
-    background: #004d8b;
+    background: #0066b6;
     color: #fff;
     -webkit-border-radius: 0px;
     -ms-border-radius: 0px;
@@ -849,13 +864,13 @@ select {
     -moz-border-radius: 0px;
     border-radius: 0px; }
     .sl-nav > li > a:hover:after, .sl-nav > li > a:focus:after, .sl-nav > li > a:active:after {
-      content: "";
+      content: '';
       position: absolute;
       left: 40%;
       bottom: -25px;
       border-width: 25px 25px 0px;
       border-style: solid;
-      border-color: #004d8b transparent;
+      border-color: #0066b6 transparent;
       z-index: 1; }
 
 .slide-nav-bg {
@@ -866,5 +881,13 @@ select {
 
 .sl-info {
   margin-top: 50px; }
+
+/*
+=================================================================== 
+ $SHAME - This is where are the quick fix styles go when they don't
+ have an official home yet. This file is meant to be checked for 
+ refactoring regularly
+===================================================================
+*/
 
 /*# sourceMappingURL=main.css.map */

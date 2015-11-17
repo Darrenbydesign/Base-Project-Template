@@ -1,5 +1,5 @@
 .footer {
-    background: lighten($gray-light,40%);
+    background: tint($gray-light, 15%);
     position: absolute;
     bottom: 0;
     height: $footer-height;

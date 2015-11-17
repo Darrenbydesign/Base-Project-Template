@@ -1,9 +1,10 @@
+@charset 'utf-8';
 // helpers are fundtions and mixins that help make writing code easier in SASS
 @import 'base/functions';
 @import 'base/mixins';
+@import 'base/config'; //variables are stored here for the entire project
 
 // Base styling for module structure
-@import 'base/config'; //variables are stored here for the entire project
 @import 'base/reset';
 @import 'base/typography';
 @import 'base/helper-classes';
@@ -37,3 +38,5 @@
 // @import 'pages/onboarding-page';
 // @import 'pages/ems-page';
 // @import 'pages/office-365-page';
+
+@import 'shame';

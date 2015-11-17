@@ -136,7 +136,7 @@
         color: dt($corp-color-dark);
         @include border-radius(0px);
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           left: 40%;
           bottom: -25px;
