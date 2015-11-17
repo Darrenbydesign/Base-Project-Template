@@ -17,18 +17,6 @@ html {
  $Typography - All default styling for typpgraphy should go here
 ===================================================================
 */
-@media screen and (min-width: 480px) {
-  .title-header {
-    font-size: 39.0625px;
-    line-height: 1.06496; } }
-@media screen and (min-width: 960px) {
-  .title-header {
-    font-size: 69.1488px;
-    line-height: 1.45773; } }
-@media screen and (min-width: 1200px) {
-  .title-header {
-    font-size: 111.375px;
-    line-height: 1.18519; } }
 html {
   font-size: 100%;
   font-family: "Segoe UI", "Helvetica", "Arial", sans-serif; }
@@ -163,9 +151,6 @@ body {
 
 label {
   font-family: "Segoe UI Light", "Helvetica", "Arial", sans-serif; }
-
-.title-header {
-  color: #0064b5; }
 
 /*=====================helper classes to be used when you want to tweak other elements but don't want to muddy your CSS=========================*/
 .font-blue {
