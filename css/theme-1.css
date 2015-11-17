@@ -31,7 +31,7 @@ html {
     line-height: 1.18519; } }
 html {
   font-size: 100%;
-  font-family: "()", helvetica, arial, sans-serif; }
+  font-family: "Segoe UI", "Helvetica", "Arial", sans-serif; }
 
 @font-face {
   font-family: 'su';
@@ -62,7 +62,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Segoe UI Light", helvetica, arial, sans-serif; }
+  font-family: "Segoe UI Light", "Helvetica", "Arial", sans-serif;
+  color: #0078D7; }
 
 h1 {
   font-size: 32px;
@@ -155,13 +156,13 @@ h6 {
       line-height: 1.111em; } }
 
 body {
-  color: #4d4d4d;
-  font-family: "()", helvetica, arial, sans-serif;
   font-size: 16px;
-  font-size: 1em; }
+  font-size: 1em;
+  color: #4d4d4d;
+  font-family: "Segoe UI", "Helvetica", "Arial", sans-serif; }
 
 label {
-  font-family: "Segoe UI Light", helvetica, arial, sans-serif; }
+  font-family: "Segoe UI Light", "Helvetica", "Arial", sans-serif; }
 
 .title-header {
   color: #004d8b; }
@@ -174,7 +175,7 @@ label {
   color: #fff; }
 
 .font-orange {
-  color: #DB3A00; }
+  color: #db3a00; }
 
 .lightGray {
   color: #737373; }
@@ -189,7 +190,7 @@ label {
   border-left: 3px solid #fff; }
 
 .light-gray-bg {
-  background: #D3D3D3; }
+  background: #828282; }
 
 .gray-bg {
   background: #4d4d4d; }
@@ -304,7 +305,7 @@ body {
   background: #4d4d4d; }
 
 .footer {
-  background: #888888;
+  background: silver;
   position: absolute;
   bottom: 0;
   height: 70px;
@@ -387,7 +388,7 @@ select {
 
 /*================$Modal Styles==================*/
 .button {
-  font-family: "()", helvetica, arial, sans-serif;
+  font-family: "Segoe UI", "Helvetica", "Arial", sans-serif;
   background-color: #0078D7;
   color: #fff; }
   .button, .button-block, .button-small {
@@ -594,10 +595,10 @@ select {
   background: #004d8b; }
 
 .status-more-info {
-  background: #a40002; }
+  background: #a30003; }
 
 .status-pending, .status-in-progress {
-  background: #F7E98C; }
+  background: #f7e98d; }
 
 .status-reopened, .status-opened {
   background: #249eff; }
@@ -844,7 +845,7 @@ select {
       border-radius: 0px; }
 
 .sl-nav > li > a {
-  font-family: "Segoe UI Light", helvetica, arial, sans-serif;
+  font-family: "Segoe UI Light", "Helvetica", "Arial", sans-serif;
   color: #fff;
   padding: 20px;
   border-bottom: 0;

@@ -1,18 +1,18 @@
 //==============================
 //Color variables
 //==============================
-$black: #000000 !default;
-$white: #fff !default;
-$red: #a40002 !default;
-$orange: #DB3A00 !default;
-$yellow: #F7E98C !default;
-$blue: #0078D7 !default;
-$green: #6db55e !default;
-$purple:#5C005C !default;
+$black: hsla(0, 0%, 0%, 1) !default;
+$white: hsla(0, 0%, 100%, 1) !default;
+$red: hsla(359, 100%, 32%, 1) !default;
+$orange: hsla(16, 100%, 43%, 1) !default;
+$yellow: hsla(52, 87%, 76%, 1) !default;
+$blue: hsla(207, 100%, 42%, 1) !default;
+$green: hsla(110, 37%, 54%, 1) !default;
+$purple:hsla(300, 100%, 18%, 1) !default;
 
 // BASE COLORS FOR OUR GRAY COLORS. THIS IS MOSTLY FOR TEXT SETTING
 $gray-base: $black !default;
-$gray: #838282 !default;
+$gray: hsla(0, 0%, 51%, 1) !default;
 $gray-light: lighten($gray, 15%) !default;
 $gray-dark: darken($gray, 15%) !default;
 
@@ -21,18 +21,35 @@ $corp-color: $blue !default;
 $corp-color-dark: shade($corp-color, 15%) !default;
 $corp-color-light: tint($corp-color, 15%) !default;
 $corp-color-second: $white !default;
-$corp-color-second-dark: darken($corp-color-second, 15%) !default;
-$corp-color-second-light: lighten($corp-color-second, 15%) !default;
-
+$corp-color-second-dark: shade($corp-color-second, 15%) !default;
+$corp-color-second-light: tint($corp-color-second, 15%) !default;
 //==============================
 //Typography variables
 //==============================
-
-$segoe-UI-regular: '()',helvetica,arial,sans-serif;
-$segoe-UI-light: 'Segoe UI Light',helvetica,arial,sans-serif;
-$segoe-UI-semilight: 'Segoe UI Semilight',helvetica,arial,sans-serif;
-$segoe-UI-semibold: 'Segoe UI Semibold',helvetica,arial,sans-serif;
-
+$segoe-UI-regular: (
+  'Segoe UI', 
+  'Helvetica', 
+  'Arial', 
+  sans-serif,
+  ) !default;
+$segoe-UI-light: (
+  'Segoe UI Light', 
+  'Helvetica', 
+  'Arial', 
+  sans-serif,
+  ) !default;
+$segoe-UI-semilight: (
+  'Segoe UI Semilight', 
+  'Helvetica', 
+  'Arial', 
+  sans-serif,
+  ) !default;
+$segoe-UI-semibold: (
+  'Segoe UI Semibold', 
+  'Helvetica', 
+  'Arial', 
+  sans-serif,
+  ) !default;
 // FONT: DECLARE YOUR FONTS SIZES AND BASE COLOR HERE
 $base-font-size: 16px !default;
 $base-font-family: $segoe-UI-regular !default;
@@ -45,7 +62,8 @@ $base-font-color: $gray-dark !default;
 // DEFAULT BOX-SIZING
 $default-box-sizing: border-box !default;
 
-// BORDERS: DEFAULT BORDER-COLOR FOR CONTAINERS AND OTHER MODULES USING THE DEFAULT THEME GOES HERE.
+// BORDERS: DEFAULT BORDER-COLOR FOR CONTAINERS AND OTHER MODULES USING 
+// THE DEFAULT THEME GOES HERE.
 $base-border-radius: 0px !default;
 $rounded-border-radius: 50% !default;
 $base-border-color: $gray !default;
@@ -61,9 +79,11 @@ $footer-height: 70px !default;
 $margin-bottom: $footer-height !default;
 
 //==============================
-//Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
+//Image variables - Images instead of writing paths to images in the partials 
+// make them variables in order keep consistent 
+// paths and easily change out images in large css files.
 //==============================
 $arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default;
-// NOTE: the value '!default' is used to define base values.
 
-//If no value is given to a variable in another theme file the above values will be used.
+// NOTE: the value '!default' is used to define base values.
+//If no value is given to a variable in another theme file the above values will be used instead of having an undeclared variable.

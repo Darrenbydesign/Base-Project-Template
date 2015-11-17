@@ -4,66 +4,85 @@
  $Typography - All default styling for typpgraphy should go here
 ===================================================================
 */
-//TYPESCALE CREATOR MIXIN
+//TYPESCALE CREATOR MIXIN (UNSTABLE)
 // TYPESCALE  VARIABLES 
-$base-font-size: 16px;
-$base-line-height: 1.3;
-$scale: 1.5;
-$bp-sizes: ( 
-  small: ( base-font-size: 16px, base-line-height: 1.3, scale: 1.25), 
-  medium: ( base-font-size: 18px, base-line-height: 1.4, scale: 1.4), 
-  large: ( base-font-size: 22px, base-line-height: 1.5, scale: 1.5)
-  );
-$breakpoints: ( 
-  small: 480px, 
-  medium: 960px, 
-  large: 1200px
-  );
-$font-sizes: (p, bq, ssh, sh, h, hero);
-@mixin typescale-breakpoint($name) {
-  @if not map-has-key($breakpoints, $name) {
-    @warn 'Invalid breakpoint `#{$name}`.';
-  }
-  @else {
-    @if map-get($breakpoints, $name)=='' {
-      @content;
-    }
-    @else {
-      @media screen and (min-width: map-get($breakpoints, $name)) {
-        @content;
-      }
-    }
-  }
-}
+// $base-font-size: 16px;
+// $base-line-height: 1.3;
+// $scale: 1.5;
+// $bp-sizes: ( 
+//   'small': ( 
+//     'base-font-size': 16px, 
+//     'base-line-height': 1.3, 
+//     'scale': 1.25,
+//     ), 
+//   'medium': ( 
+//     'base-font-size': 18px, 
+//     'base-line-height': 1.4, 
+//     'scale': 1.4,
+//     ), 
+//   'large': ( 
+//     'base-font-size': 22px, 
+//     'base-line-height': 1.5, 
+//     'scale': 1.5,
+//     ),
+//   );
+// $breakpoints: ( 
+//   'small': 480px, 
+//   'medium': 960px, 
+//   'large': 1200px,
+//   );
+// $font-sizes: (
+//   'p', 
+//   'bq', 
+//   'ssh', 
+//   'sh', 
+//   'h', 
+//   'hero',
+//   );
+// @mixin typescale-breakpoint($name) {
+//   @if not map-has-key($breakpoints, $name) {
+//     @warn 'Invalid breakpoint `#{$name}`.';
+//   }
+//   @else {
+//     @if map-get($breakpoints, $name)=='' {
+//       @content;
+//     }
+//     @else {
+//       @media screen and (min-width: map-get($breakpoints, $name)) {
+//         @content;
+//       }
+//     }
+//   }
+// }
 
-// FUNCTION TO GET TYPESCALE BREAKPOINTS
-@function get-breakpoint-property($prop, $bp) {
-  @return map-get(map-get($bp-sizes, $bp), $prop);
-}
+// // FUNCTION TO GET TYPESCALE BREAKPOINTS
+// @function get-breakpoint-property($prop, $bp) {
+//   @return map-get(map-get($bp-sizes, $bp), $prop);
+// }
 
-@mixin generate-font-properties($label, $scale, $base-font-size, $base-line-height) {
-  $scale-value: index($font-sizes, $label) - 1;
-  $fs: pow($scale, $scale-value) * $base-font-size;
-  $lh: $base-font-size * $base-line-height / $fs;
-  @while $lh < 1 {
-    $lh: $lh + $lh;
-  }
-  font-size: $fs;
-  line-height: $lh;
-}
+// @mixin generate-font-properties($label, $scale, $base-font-size, $base-line-height) {
+//   $scale-value: index($font-sizes, $label) - 1;
+//   $fs: pow($scale, $scale-value) * $base-font-size;
+//   $lh: $base-font-size * $base-line-height / $fs;
+//   @while $lh < 1 {
+//     $lh: $lh + $lh;
+//   }
+//   font-size: $fs;
+//   line-height: $lh;
+// }
 
-@each $size, $data in $bp-sizes {
-  $bsf: get-breakpoint-property(base-font-size, $size);
-  $blh: get-breakpoint-property(base-line-height, $size);
-  $s: get-breakpoint-property(scale, $size);
-  @include typescale-breakpoint($size) {
-    @each $label in $font-sizes {
-      %#{$label} {
-        @include generate-font-properties($label, $s, $bsf, $blh);
-      }
-    }
-  }
-}
+// @each $size, $data in $bp-sizes {
+//   $bsf: get-breakpoint-property(base-font-size, $size);
+//   $blh: get-breakpoint-property(base-line-height, $size);
+//   $s: get-breakpoint-property(scale, $size);
+//   @include typescale-breakpoint($size) {
+//     @each $label in $font-sizes {
+//       %#{$label} {
+//         @include generate-font-properties($label, $s, $bsf, $blh);
+//       }
+//     }
+//   }
+// }
 
 
 html {
@@ -117,7 +136,7 @@ h4,
 h5,
 h6 {
     font-family: $segoe-UI-light;
-    // color: $corp-color;
+    color: $corp-color;
 }
 
 h1 {
@@ -199,9 +218,9 @@ h6 {
 }
 
 body {
+    @include font-size($base-font-size);
     color: $base-font-color;
     font-family: $segoe-UI-regular;
-    @include font-size($base-font-size);
 }
 label
 {

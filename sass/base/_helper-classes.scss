@@ -1,3 +1,4 @@
+
 /*=====================helper classes to be used when you want to tweak other elements but don't want to muddy your CSS=========================*/
 
 .font-blue {
@@ -29,7 +30,7 @@
 }
 
 .light-gray-bg {
-  background: #D3D3D3;
+  background: tint($gray, 30%);
 }
 
 .gray-bg {
@@ -137,6 +138,7 @@
 
 .link-large {
   @include font-size(22px);
+
   &:hover {
     text-decoration: none;
   }
@@ -144,6 +146,7 @@
 // This is a cool animation that turns things from black and white to color! Its currently set to the hover action
 .bw-clr {
     @include prefix((filter: grayscale(1)), webkit moz ms o);
+
     &:hover {
         @include prefix((filter: grayscale(0)), webkit moz ms o);
         @include transition(((filter 0.8s ease-in)));
