@@ -1,5 +1,13 @@
-// functions for use with the mixin library I am building for FastTrack Projects
-// This calculation converts any given pixel size for type into a relative em unit for better responsize typography on smaller and larger than desktop devices.
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// functions for use with the mixin library I am building for internal projects
+/// @group Functions
+////
+
+
+
+/// This calculation converts any given pixel size for type into a relative em unit for better responsize typography on smaller and larger than desktop devices.
 @function calculateRem($size) {
   $remSize: $size /16px;
   @return $remSize * 1rem;
@@ -15,15 +23,15 @@
   @return $breapointSizeEms * 1em;
 }
 
-// This function is designed to convert a pixel based size to a percentage unit for responsive purposes. This can be helpful in creating your own grid system if necessary...
-// This formula comes from the responsize design tenant: target / context = result.
-// So for example if you have a container that is 1000px wide and you want to place an element in that container that is 650px wide...
-// This would be the equation: 650px(target)/1000px(context)= 65%(result)
+/// This function is designed to convert a pixel based size to a percentage unit for responsive purposes. This can be helpful in creating your own grid system if necessary...
+/// This formula comes from the responsize design tenant: target / context = result.
+/// So for example if you have a container that is 1000px wide and you want to place an element in that container that is 650px wide...
+/// This would be the equation: 650px(target)/1000px(context)= 65%(result)
 @function calculatePercent($target, $container) {
   @return ($target / $container) * 100%;
 }
 
-// Createing a shorthand names for quicker use if you're extremely lazy....or cant type...or just don't like long function names
+/// Createing a shorthand names for quicker use if you're extremely lazy....or cant type...or just don't like long function names
 @function ce($size) {
   @return calculateEm($size);
 }
@@ -40,6 +48,9 @@
   @return calculatePercent($target, $container);
 }
 
+/// Change Text color dynamically based on background color
+/// @param {Color} $color - color used as a backdrop to text
+/// @return {Color} Text in either light or dark color based on background color provided.
 @function dt($color) {
   @return dynamicTextColor($color);
 }
@@ -61,21 +72,30 @@
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
-// This bad boy uses Sass to dynamically change the text color to black or white depending on the backrground color of the element you use it in! That is amazing
-$dark-text: #4d4d4d;
+
 $light-text: #fff;
+$dark-text: #4d4d4d;
+
+
+/// Change Text color dynamically based on background color
+/// to black or white depending on the backrground color of the element you use it in! That is amazing!
+/// @param {Color} $color - color used as a backdrop to text
+/// @return {Color} Text in either light or dark color based on background color provided.
 @function dynamicTextColor($color) {
   @if (lightness($color) > 50) {
-    @return $dark-text; // This should return black text for items with lighter backgrounds
+
+    /// This should return black text for items with lighter backgrounds
+    @return $dark-text; 
   }
   @else {
-    @return $light-text; // This should return white text for items with dark backgrounds
+    /// This should return white text for items with dark backgrounds
+    @return $light-text; 
   }
 }
 
 
 
-// Function to remove units from a measurement
+/// Function to remove units from a measurement
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0  +  1);
@@ -83,7 +103,7 @@ $light-text: #fff;
   @return $number;
 }
 
-// Power function borrowed from the compass framework
+/// Power function borrowed from the compass framework
 @function pow($number, $exp) {
   $value: 1;
   @if $exp >= 0 {

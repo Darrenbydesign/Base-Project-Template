@@ -1,13 +1,13 @@
-@mixin transition($prop) {
-  -webkit-transition: $prop;
-  -moz-transition: $prop;
-  -o-transition: $prop;
-  transition: $prop;
-}
+////
+/// Mixins simple solutions to complicated CSS/SASS problems... thank me later
+/// @group Mixins
+/// @author Darren Sorrels
+////
 
-// Mixins simple solutions to complicated CSS problems... thank me later
-// Vendor Prefix generator for properties that need them. 
-// This one is to be used for general cases where there isn't already a mixin built with the prefixes in place.
+/// Vendor Prefix generator for properties that need them. 
+/// This one is to be used for general cases where there isn't already a mixin built with the prefixes in place.
+/// @param {alpanum} $map - used to map the vendor prefixes to a property declaration
+/// @param {string} $vendors - map values from the $prop map
 @mixin prefix($map, $vendors: webkit moz ms o) {
   @each $prop,
   $value in $map {
@@ -16,20 +16,25 @@
         #{'-' + $vendor + '-' + $prop}: #{$value};
       }
     }
-    // add regular property to the end of list without vendor prefixes
+    /// add regular property to the end of list without vendor prefixes
     #{$prop}: #{$value};
   }
 }
 
-// Simple mixin for border-radius changes. just include this mixin and provide a value and you're good to go.
+/// Simple mixin for border-radius changes. just include this mixin and provide a value and you're good to go.
+///@param {aplhanum} $radius - value that desired for border-radius
 @mixin border-radius($radius) {
-  // @warn 'The `border-radius()` mixin will be deprecated in version 2.0.';
+  ///  @deprecated This mixin will probably be obsolete soon as border-radius is becoming more standardized in the browser world.
+  /// '@warn' 'The `border-radius()` mixin will be deprecated in version 2.0.';
   @include prefix( (border-radius: $radius), webkit ms o moz);
 }
 
-// Button mixin creates a button. All it needs is a color added to background yay! 
-// No more using the extend class on the button each time bloating the output CSS.
+///Variable used for the button mixin map values
 $Placeholder-Selectors: ();
+/// Button mixin creates a button for you. all it needs is a color declararation added for the background yay! 
+/// No more using the extend class on the button each time bloating the output CSS.
+/// @param {alphanum} $color - include a color in the mixin and this will add all the values for you
+/// @param {bool} $extend [true] - This value pertains to the button static mixin that is used to do all the heavy lifting. It should be set to true to start the loop.
 @mixin button($color, $extend: true) {
   @include button-static($extend);
   background-color: $color;
@@ -47,6 +52,10 @@ $Placeholder-Selectors: ();
   }
 }
 
+/// Button mixin creates a button for you. all it needs is a color declararation added for the background yay! 
+/// No more using the extend class on the button each time bloating the output CSS.
+/// @param {alphanum} $button-selector - unique value that drives looping function to create buttons dynamically
+/// @param {bool} $extend [true] - It should be set to true to start the loop.
 @mixin button-static($extend: true) {
   $button-selector: map-get($Placeholder-Selectors, 'button');
   @if $extend==true {
@@ -74,36 +83,35 @@ $Placeholder-Selectors: ();
   }
 }
 
-// This mixin calls on the calculateRem function in the functions partial file it will output the pixel size 
-// first then the rem unit for browswer that support it (IE9+).
+/// This mixin calls on the calculateRem function in the functions partial file it will output the pixel size 
+/// first then the rem unit for browswer that support it (IE9+).
+/// @param {numeric} $size - pixel size you want to convert into em/rems
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateEm($size);
   // font-size: calculateRem($size);
 }
 
-// RESPONSIVE IMAGE
-//
-// Keep images from scaling beyond the width of their parents.
+/// Keep images from scaling beyond the width of their parents with this mixin 
+/// that sets the height of an image dynamically based on the width of its container.
+/// @param {string} $display [block] - set the display type of the image for layout purposes.
 @mixin img-responsive($display: block) {
   display: $display;
   max-width: 100%;
-  // Part 1: Set a maximum relative to the parent
+  /// Part 1: Set a maximum relative to the parent
   height: auto;
-  // Part 2: Scale the height according to the width, otherwise you get stretching
+  /// Part 2: Scale the height according to the width, otherwise you get stretching
 }
 
+/// These mixins help with creating media queries. They can now be more semantic instead of worrying about the 
+/// syntax of the @media call you can just call the mixin and place in your content. This does all that for you!
 $mq-small: 320px;
 $mq-medium: 768px;
 $mq-large: 1200px;
 $mq-xlarge: 1600px;
-
-// These mixins help with creating media queries. They can now be more semantic instead of worrying about the 
-// syntax of the @media call you can just call the mixin and place in your content. This does all that for you!
-
-// LARGE SCREEN BREAKPOINTS (EX. DESKTOP VIEWS)
+/// large screen breakpoints (ex. desktop views)
 @mixin breakpoint-xl {
-  // LARGE SCREEN BREAKPOINTS (USED ONLY WHEN ABSOLUTELY NECESSARY. TARGETING OVER 1800PX)
+  /// large screen breakpoints (used only when absolutely necessary. targeting over 1800px)
   @media only screen and (min-width: $mq-xlarge) {
     @content;
   }
@@ -115,61 +123,62 @@ $mq-xlarge: 1600px;
   }
 }
 
-// MEDIUM SCREEN BREAKPOINTS (EX. SMALL LAPTOPS,TABLETS,)
+/// medium screen breakpoints (ex. small laptops,tablets,)
 @mixin breakpoint-md {
   @media only screen and (min-width: $mq-medium) and (max-width: 1024px) {
     @content;
   }
 }
 
-// small screen breakpoints (ex. phones and phablets)
+/// small screen breakpoints (ex. phones and phablets)
 @mixin breakpoint-sm {
   @media only screen and (min-width: $mq-small) and (max-width: 480px) {
     @content;
   }
 }
 
+/// Define the upper and lower range of the media queries programatically for more complex media queries
 $fq-xlarge: cb(1920px) !default;
 $fq-large: cb(1440px) !default;
 $fq-medium: cb(1024px) !default;
 $fq-small: cb(640px) !default;
-// Define the upper and lower range of the media queries programatically for more complex media queries
 $fq-small-range: (0, $fq-small) !default;
 $fq-medium-range: ($fq-small + ce(1px), $fq-medium) !default;
 $fq-large-range: ($fq-medium + ce(1px), $fq-large) !default;
 $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
-// ==========================FLEXBOX Media Queries for Flex Grid============================
+//=====================================
+/// FLEXBOX Media Queries for Flex Grid
+//=====================================
 @mixin flexpoint-xl {
-  // Smaller and Medium screen sizes
+  /// Smaller and Medium screen sizes
   @media (min-width: $fq-xlarge) {
     @content;
   }
 }
 
 @mixin flexpoint-lg {
-  // Smaller and Medium screen sizes
+  /// Smaller and Medium screen sizes
   @media (min-width: $fq-large) {
     @content;
   }
 }
 
 @mixin flexpoint-md {
-  // Smaller and Medium screen sizes
+  /// Smaller and Medium screen sizes
   @media (min-width: $fq-medium) {
     @content;
   }
 }
 
-// smaller screen breakpoints
+/// smaller screen breakpoints
 @mixin flexpoint-sm {
   @media (min-width: $fq-small) {
     @content;
   }
 }
 
-// This mixin will alleviate the need to write the vendor prefixes yourself for animations. 
-// Now all you have to do is call this mixin and enter your animation name and enter your actions.
-
+/// This mixin will alleviate the need to write the vendor prefixes yourself for animations. 
+/// Now all you have to do is call this mixin and enter your animation name and enter your actions.
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
@@ -188,17 +197,23 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   }
 }
 
-// This mixin can to be coupled with the keyframes animation above. 
-// Use this one to give animation action values like timing and looping, etc.
+/// This mixin can be coupled with the keyframes animation above. 
+/// Use this one to give animation action values like timing and looping, etc.
 @mixin animation($str) {
   @include prefix((animation: $str), webkit moz ms o);
 }
 
-// Quick hip-fire way to call transition effects in your Sass files. No more worrying about prefixes either.
+/// A mixin that makes creating transition animations a little less of a burden.
+/// @param {string}  $prop - property for the transition animation
 @mixin transition($args) {
   @include prefix ((transition: $args), webkit moz ms o);
 }
 
+/// Create link colors easily with this mixin. This very useful for navigation links and aritcle/blog links.
+/// @param {alphanum} $link - something about that value here
+/// @param {alphanum} $visited - something about that value here
+/// @param {alphanum} $hover - something about that value here
+/// @param {alphanum} $active - something about that value here
 @mixin link-color($link, $visited, $hover, $active) {
   a {
     color: $link;
@@ -214,7 +229,7 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   }
 }
 
-// FlexBox mixins for browser support
+/// FlexBox mixin created to place backwards compatible flexbox code into your CSS so you don't have to remember it
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -223,6 +238,21 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   display: flex;
 }
 
+/// Flex mixin created with backwards compatible flexbox code for the flex property 
+///that way support for older browsers isn't completely lost
+/// It follows the same spec as flexbox's flex spec. See below
+
+/// @example scss flex mixin 
+  ///  .my-flex-item{
+  /// @include flex(2);
+  /// }
+  /// OR 
+  /// .myy-flex-item{
+  /// @include flex(0 1 100%)
+  /// }
+///
+/// @link https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+/// @param {alphanum} $values - this is the value by which the flex item will be increased. 
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex: $values;
@@ -231,15 +261,24 @@ $fq-xlarge-range: ($fq-large + ce(1px), $fq-xlarge) !default;
   flex: $values;
 }
 
+/// Flex direction mixin for a quick way to provide the direction to a flex item
+/// @param {string} $values [row] - The direction by which a flex-item will move along the X or Y axis
+/// The default value is set to Row because most of the time we want to make items flex across the horizontal plane
 @mixin flex-direction($values: row) {
   -ms-flex-direction: $values;
   flex-direction: $values;
 }
 
+/// Mixin for the FLex-flow short-hand CSS call. It defaults to row wrap since that is most commonly used initiall
+/// the mixin makes this easy to change when dealing with media queries
+/// @param {string} $direction [row] - sets the flex-item evenly across the horizontal acces
+/// @param {string} $wrap [wrap] - sets the flex items to wrap when they reach the edge of its parent flex container.
 @mixin flex-flow($direction: row, $wrap: wrap) {
   flex-flow: $direction $wrap;
 }
 
+/// the align-items property is seldom changed in these projects, but an effort to pre-emptive we have included
+/// this mixin to make changing the value easier. Our default is set to center(most of the project models need to be changed to this state).
 @mixin align-items($values: center) {
   -webkit-box-align: $values;
   -moz-box-align: $values;

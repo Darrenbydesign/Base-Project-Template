@@ -27,8 +27,8 @@
     margin-bottom: 10px;
     position: relative;
     .panel-button {
-      // top: 0;
-      // bottom: -3px;
+      /// top: 0;
+      /// bottom: -3px;
       bottom: -0.975em;
       right: 15px;
       position: absolute;
@@ -55,7 +55,7 @@
   >.cie-list-group .list-group-item,
   >.panel-collapse>.cie-list-group .list-group-item {
     @include border-radius(0);
-    // border-bottom: 1px solid $brand-gray-md;
+    /// border-bottom: 1px solid $brand-gray-md;
     border-bottom: none;
   }
 }

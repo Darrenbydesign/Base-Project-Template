@@ -1,89 +1,106 @@
-//==============================
-//Color variables
-//==============================
-$black: hsla(0, 0%, 0%, 1) !default;
-$white: hsla(0, 0%, 100%, 1) !default;
-$red: hsla(359, 100%, 32%, 1) !default;
-$orange: hsla(16, 100%, 43%, 1) !default;
-$yellow: hsla(52, 87%, 76%, 1) !default;
-$blue: hsla(207, 100%, 42%, 1) !default;
-$green: hsla(110, 37%, 54%, 1) !default;
-$purple:hsla(300, 100%, 18%, 1) !default;
+////
+/// @group Variables
+////
 
-// BASE COLORS FOR OUR GRAY COLORS. THIS IS MOSTLY FOR TEXT SETTING
+//==============================
+/// @group Color variables
+//==============================
+
+$black: rgba(0,0,0,1) !default;
+$white: rgba(255,255,255,1) !default;
+$red: rgba(164,0,2,1) !default;
+$orange: rgba(219,58,0,1) !default;
+$yellow: rgba(247,233,140,1) !default;
+$blue: rgba(0,120,215,1) !default;
+$green: rgba(109,181,94,1) !default;
+$purple:rgba(92,0,92,1) !default;
+
+/// Base colors for our dark values in the default theme this is mostly for text setting.
 $gray-base: $black !default;
-$gray: hsla(0, 0%, 51%, 1) !default;
+$gray: rgba(131,130,130,1) !default;
 $gray-light: lighten($gray, 15%) !default;
 $gray-dark: darken($gray, 15%) !default;
 
-// CORP-COLOR: THESE ARE THE BASE COLOR THAT START ANY PROJECT USING THE INITIAL THEME. ENJOY
+// Default Theme Colors - These are the base colors that start any project using the initial theme. They are pretty generic right now but will be revitalized in the v1.0.1 of this doucment
 $corp-color: $blue !default;
+
+/// Darker version of the main theme color. Created using shade and tint functions fromt the @group functions list
 $corp-color-dark: shade($corp-color, 15%) !default;
+///
 $corp-color-light: tint($corp-color, 15%) !default;
+///
 $corp-color-second: $white !default;
+///
 $corp-color-second-dark: shade($corp-color-second, 15%) !default;
+///
 $corp-color-second-light: tint($corp-color-second, 15%) !default;
+
 //==============================
-//Typography variables
+///Typography variables
 //==============================
+
+///
 $segoe-UI-regular: (
   'Segoe UI', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
+///
 $segoe-UI-light: (
   'Segoe UI Light', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
+///
 $segoe-UI-semilight: (
   'Segoe UI Semilight', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
+///
 $segoe-UI-semibold: (
   'Segoe UI Semibold', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
-// FONT: DECLARE YOUR FONTS SIZES AND BASE COLOR HERE
+
+/// Declare your fonts sizes and base color here
 $base-font-size: 16px !default;
 $base-font-family: $segoe-UI-regular !default;
 $base-font-color: $gray-dark !default;
 
-//==============================
-//Layout variables
-//==============================
+///==============================
+///Layout variables
+///==============================
 
-// DEFAULT BOX-SIZING
+/// FONTS: Default box-sizing for the projects
 $default-box-sizing: border-box !default;
 
-// BORDERS: DEFAULT BORDER-COLOR FOR CONTAINERS AND OTHER MODULES USING 
-// THE DEFAULT THEME GOES HERE.
+/// BORDERS: Default border-styles  for use with a project using this stylesheet
 $base-border-radius: 0px !default;
 $rounded-border-radius: 50% !default;
 $base-border-color: $gray !default;
 
-// BOX-SHADOW
+/// BOX-SHADOW:
 $default-box-shadow: 0px 1px 5px rgba($gray, 0.2) !default;
 
-// NAVIGATION
+/// This is used with navigation menus that are using fixed positioning
 $fixed-nav-body-padding: 50px !default;
 
-// FOOTER
+/// FOOTER Variables
 $footer-height: 70px !default;
 $margin-bottom: $footer-height !default;
 
 //==============================
-//Image variables - Images instead of writing paths to images in the partials 
-// make them variables in order keep consistent 
-// paths and easily change out images in large css files.
+///Image variables - Images instead of writing paths to images in the partials 
+/// make them variables in order keep consistent 
+/// paths and easily change out images in large css files.
 //==============================
 $arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default;
 
-// NOTE: the value '!default' is used to define base values.
-//If no value is given to a variable in another theme file the above values will be used instead of having an undeclared variable.
+/// NOTE: the value '!default' is used to define base values.
+///If no value is given to a variable in another theme file the above values will be used instead of having an undeclared variable.

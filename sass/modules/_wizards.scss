@@ -99,7 +99,7 @@
       width: 50%;
     }
     @include flexpoint-md {
-      // width: 33.33%;
+      /// width: 33.33%;
       width: 30.33%;
     }
     margin: 10px 15px;
@@ -115,15 +115,15 @@
   @include flex-direction(column);
   @include transition(border 0.3s ease-in);
   @include flexpoint-sm {
-    // width: 45vmin;
+    /// width: 45vmin;
     align-self: auto;
   }
   background: $white;
   border: 2px solid darken($gray-dark, 10%);
   padding: 10px 15px;
-  // align-self: center;
+  /// align-self: center;
   height: auto;
-  // width: 60vw;
+  /// width: 60vw;
 }
 
 .wizard-block-img {

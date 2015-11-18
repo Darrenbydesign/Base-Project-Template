@@ -145,10 +145,10 @@
         background-size: 50%;
     }
 }
-// .workloads{
-//     //stricly for containing the workload ft-alert content
-//     background: rgba($black,0.3);
-// }
+/// .workloads{
+///     ///stricly for containing the workload ft-alert content
+///     background: rgba($black,0.3);
+/// }
 
 .ft-alert {
     padding: 0;
@@ -279,7 +279,7 @@
 }
 
 .play-icon {
-    // height: 100px;
+    /// height: 100px;
 }
 
 .video-cta {
@@ -348,8 +348,8 @@
         @include font-size(30px);
     }
 }
-// This utilizes boostraps existing carousel and modifies the layout a bit for custom tweaks.
-// This needs to be extrapolated to its own unique module soon.
+/// This utilizes boostraps existing carousel and modifies the layout a bit for custom tweaks.
+/// This needs to be extrapolated to its own unique module soon.
 .ft-carousel {
     background: lighten($gray-light, 40%);
     padding-bottom: 30px;

@@ -22,7 +22,7 @@
 }
 
 .status-closed {
-  // background: $gray-md;
+  /// background: $gray-md;
   background: $corp-color-dark;
 }
 
@@ -30,17 +30,17 @@
   background: $red;
 }
 .status-pending,.status-in-progress {
-  // background: $yellow;
+  /// background: $yellow;
   background: $yellow;
 }
 
 .status-reopened, .status-opened {
-  // background: $red;
+  /// background: $red;
   background: lighten($blue, 15%);
 }
 
 .status-solution {
-  // background: $blue;
+  /// background: $blue;
   background: $green;
 }
 

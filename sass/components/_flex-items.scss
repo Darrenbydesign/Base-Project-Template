@@ -23,22 +23,22 @@
   align-self: center;
   @include flexpoint-sm {
     @include flex(auto);
-    // padding-top: 0;
+    /// padding-top: 0;
   }
-  // padding-bottom: ce(10px);
+  /// padding-bottom: ce(10px);
 }
 
 .flex-header-title {
   @include flex(3);
   @include flexpoint-sm {
     @include flex(2);
-    // padding-top: 0;
+    /// padding-top: 0;
   }
-  // padding-top: ce(10px);
+  /// padding-top: ce(10px);
 }
 
-// Flexible container 
-// this is used to center something no matter what the browser width is. Hooray!
+/// Flexible container 
+/// this is used to center something no matter what the browser width is. Hooray!
 .flex-container {
   @include flexbox();
   @include flex-flow(row, wrap);
@@ -53,7 +53,7 @@
   list-style: none;
   @include flexbox();
   @include flex-flow(column, wrap);
-  // align-content: center;
+  /// align-content: center;
   margin: 0;
   padding: 0;
   li {
