@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header ng-controller="HeaderController">
+      <nav class="navbar cie-header" role="navigation">
+        <div class="flex-container">
+          <div class="navbar-header">
+            <a class="navbar-brand cie-brand txt-SegoeUI-Light" ng-href="{{ url }}"><span class="hidden-xs">Customer Immersion Experience</span> <span class="visible-xs">CIE</span></a>
+          </div>
+          
+          <ul class="nav flex-end header-list">
+            <li class="dropdown cie-dropdown notificationList">
+              <a href="javascript:void(0)" class="dropdown-toggle notification-dropdown" ng-click="noNewUserNotifications()" data-toggle="dropdown">
+                <span class="sr-only">Notification List</span>
+                <span class="icons icon-notification">
+                  <span ng-cloak ng-if="Notifications && Notifications.length != 0" class="cie_numberCircle">
+                      {{Notifications.length}}
+                  </span>
+                </span>
+              </a>
+              <ul id="myDropdown" ng-click="$event.stopPropagation()" ng-if="Notifications.length != 0" class="dropdown-menu cie_dropDown">
+                <li id="notification{{n.Id}}" role="presentation" class="notificationsLI" ng-repeat="n in Notifications | startFrom:currentPage*pageSize | limitTo:pageSize">
+                  <div class="note-close">
+                    <a><img src="/Content/images/x_icon.png" class="cie_xButton" ng-click="hideMessage($index, n.Id)" /></a>
+                  </div>
+                  <div class="pull-left">
+                    <span ng-if="n.NotificationType == 1" class="icons icon-alert cie_messageImg"></span>
+                    <span ng-if="n.NotificationType == 0 || n.NotificationType == 2 || n.NotificationType == 3 || n.NotificationType == 4" class="cie_messageImg">
+                      <img class="annIMG" src="~/Content/images/trellis-announcement_icon_Cropped.png" />
+                    </span>
+                  </div>
+                  <div class="note dropDownRight">
+                    <a ng-cloak class="cie_messageTitle" role="menuitem" tabindex="-1" href="#" ng-click="notificationsDirect(n.Id)">
+                                                {{n.Subject}}
+                                            </a>
+                    <br>
+                    <span class="cie_date">
+                                                {{n.Date}}
+                                            </span>
+                  </div>
+                </li>
+                <li class="notificationButtons">
+                  <div>
+                    <div class="form-group text-center">
+                      <span ng-click="UserNotifications()" class="not-btn notViewAll">View All</span>
+                      <span ng-click="DismissAll()" class="not-btn notDismissAll">Dismiss All</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div ng-if="Notifications.length > pageSize" class="notPaging form-group col-sm-12 text-center">
+                      <button class="notPagingBtn pull-left" ng-disabled="currentPage == 0" ng-click="lastPage()">Back</button>
+                      <span class="pagesNumber"> {{currentPage+1}} / {{numberOfPages}} </span>
+                      <button class="notPagingBtn pull-right" ng-disabled="currentPage >= Notifications.length/pageSize - 1" ng-click="nextPage()">Next</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li ng-cloak class="dropdown cie-dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle profile-dropdown" data-toggle="dropdown">
+                <span class="sr-only">Profile Info</span>
+                <span class="cie-navbar-link">Hello, <u>@User.Identity.GetApplicationDisplayName()</u>!</span> @if (User.Identity.WasAuthenticatedByMicrosoftAccount()) {
+                <img class="cie-profile-img img-circle" src="@string.Concat(" https://apis.live.net/v5.0/ ",User.Identity.GetMicrosoftAccountId(),"/picture ")" /> } else {
+                <span class="icons icon-profile"></span> }
+                <span class="icons icon-arrowup-w align-middle"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/securitymodel/UserProfile/edit">Account Settings</a></li>
+                
+                <li><a href="/securitymodel/UserProfile/List">Permissions</a></li>
+                
+                <li><a href="@Url.Action(" Abandon ","SignIn ", new {area = "SecurityModel "})">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="navbar cie-navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="dashboard-link pull-right visible-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div ng-controller="NavBarController" class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav cie-nav navbar-nav">
+              <li class="active">
+                <a ng-class="{selected: isCurrent('Get-Started') }" ng-click="setCurrentView('Get-Started')" href="/">Get Started</a>
+              </li>
+              <li><a ng-class="{ selected: isCurrent('Learn') }" ng-click="setCurrentView('Learn')" href="/General/General/Learn">Learn</a></li>
+              <li><a ng-class="{ selected: isCurrent('Community') }" ng-click="setCurrentView('Community')" href="/General/General/Community">Community</a></li>
+              <li><a ng-class="{ selected: isCurrent('Help') }" ng-click="setCurrentView('Help')" href="/SupportModel/Help/Index">Help</a></li>
+              <a class="dashboard-link navbar-right hidden-xs" href="/General/General/Dashboard" ng-click="setCurrentView('Dashboard')"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="container-fluid">
+        <div class="full-height">
+          <div class="container">
+            <div class="tile-container">
+              <h1 class="text-center">Session Wizard</h1>
+              <ul class="wizard-dots">
+                <li class="dot-selected" ng-if="isWizardStep($index) && !isCurrentOrPassedStep($index)">
+                  <span class="wiz-icon-container"><i class="fa fa-check wizard-icon"></i></span>
+                  <div class="wizard-label">
+                    <span>CUSTOMER</span>
+                  </div>
+                </li>
+                <li class="dot-selected">
+                  <div class="">
+                    <span class="wiz-icon-container"><i class="fa fa-check wizard-icon"></i></span>
+                    <div class="wizard-label">DATE</div>
+                  </div>
+                </li>
+                <li class="dot-selected dot-active">
+                  <div class="wizard-label">LOCATION</div>
+                </li>
+                <li class="">
+                  <div class="wizard-label">INDUSTRY</div>
+                </li>
+                <li>
+                  <div class="wizard-label">DETAILS</div>
+                </li>
+              </ul>
+              <h1 class="text-center">Tenant Wizard</h1>
+              <ul class="wizard-dots">
+                <li ng-if="isWizardStep($index) && !isCurrentOrPassedStep($index)">
+                  <!-- <i class="fa fa-check txt-brand-gray-md"></i> -->
+                  <div class="wizard-label">
+                    <span>INDUSTRY</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="wizard-label">REGION</div>
+                </li>
+                <li>
+                  <div class="wizard-label">EMAIL</div>
+                </li>
+                <li>
+                  <div class="wizard-label">TENANT NAME</div>
+                </li>
+                <li>
+                  <div class="wizard-label">PHONE NUMBER</div>
+                </li>
+                <li>
+                  <div class="wizard-label">CONFIRMATION CODE</div>
+                </li>
+              </ul>
+              <h1 class="text-center">Quick Tenant Wizard</h1>
+              <ul class="wizard-dots">
+                <li ng-if="isWizardStep($index) && !isCurrentOrPassedStep($index)">
+                  <!-- <i class="fa fa-check txt-brand-gray-md"></i> -->
+                  <div class="wizard-label">
+                    <span>Industry</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="wizard-label">Data Center</div>
+                </li>
+              </ul>
+              <h1 class="text-center">Ticket Wizard</h1>
+              <ul class="wizard-dots">
+                <li ng-if="isWizardStep($index) && !isCurrentOrPassedStep($index)">
+                  <!-- <i class="fa fa-check txt-brand-gray-md"></i> -->
+                  <div class="wizard-label">
+                    <span>Title</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="wizard-label">description</div>
+                </li>
+                <li>
+                  <div class="wizard-label">types</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

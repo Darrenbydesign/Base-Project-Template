@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIE Redesign-DS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="sass/themes/css/vdw-branding.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header ng-controller="HeaderController">
+      <nav class="navbar cie-header" role="navigation">
+        <div class="container">
+          <div class="pull-right">
+            <ul class="list-inline">
+              <li class="dropdown cie-dropdown notificationList">
+                <a class="dropdown-toggle" ng-click="noNewUserNotifications()" data-toggle="dropdown">
+                  <span class="sr-only">Notification List</span>
+                  <span class="sr-only">Notifications</span>
+                  <span class="icons icon-notification">
+                                        <span ng-if="Notifications.length != 0" class="cie_numberCircle">
+                                            {{Notifications.length}}
+                                        </span>
+                  </span>
+                </a>
+                <ul id="myDropdown" ng-click="$event.stopPropagation()" ng-if="Notifications.length != 0" class="dropdown-menu cie_dropDown">
+                  <li id="notification{{n.Id}}" role="presentation" class="notificationsLI" ng-repeat="n in Notifications | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <div class="note-close">
+                      <a><img src="/Content/images/x_icon.png" class="cie_xButton" ng-click="hideMessage($index, n.Id)" /></a>
+                    </div>
+                    <div class="pull-left">
+                      <span ng-if="n.NotificationType == 1" class="icons icon-alert cie_messageImg"></span>
+                      <span ng-if="n.NotificationType == 0 || n.NotificationType == 2 || n.NotificationType == 3 || n.NotificationType == 4" class="cie_messageImg">
+                                                <img class="annIMG" src="~/Content/images/trellis-announcement_icon_Cropped.png" />
+                                            </span>
+                    </div>
+                    <div class="note dropDownRight">
+                      <a class="cie_messageTitle" role="menuitem" tabindex="-1" href="#" ng-click="notificationsDirect(n.Id)">
+                                                {{n.Subject}}
+                                            </a>
+                      <br>
+                      <span class="cie_date">
+                                                {{n.Date}}
+                                            </span>
+                    </div>
+                  </li>
+                  <li class="notificationButtons">
+                    <div>
+                      <div class="form-group text-center">
+                        <span ng-click="UserNotifications()" class="not-btn notViewAll">View All</span>
+                        <span ng-click="DismissAll()" class="not-btn notDismissAll">Dismiss All</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div ng-if="Notifications.length > pageSize" class="notPaging form-group col-sm-12 text-center">
+                        <button class="notPagingBtn pull-left" ng-disabled="currentPage == 0" ng-click="lastPage()">Back</button>
+                        <span class="pagesNumber"> {{currentPage+1}} / {{numberOfPages}} </span>
+                        <button class="notPagingBtn pull-right" ng-disabled="currentPage >= Notifications.length/pageSize - 1" ng-click="nextPage()">Next</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                  <mscieuploader block-size="2048" retries="4" retry-backoff="4"></mscieuploader>
+                </a>
+              </li>
+              <li class="dropdown cie-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="sr-only">Profile Info</span>
+                  <span class="cie-navbar-link">Hello, 
+                    <u>
+                    <!-- @User.Identity.GetApplicationDisplayName() -->
+                    [namehere]
+                    </u>!
+                  </span>
+                  <!-- @if (User.Identity.WasAuthenticatedByMicrosoftAccount()) { -->
+                  <img class="mscie-profileImg img-circle" src="@string.Concat(" https://apis.live.net/v5.0/ ",User.Identity.GetMicrosoftAccountId(),"/picture ")" />
+                  <!-- } else  -->
+                  <!-- {  -->
+                  <span class="icons icon-profile"></span>
+                  <!-- } -->
+                  <span class="icons icon-arrowup-w"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="@Url.Action(" Abandon ","SignIn ", new {area = "SecurityModel "})">Sign Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-header">
+            <a class="navbar-brand cie-brand" href="/"><span class="hidden-xs">Customer Immersion Experience</span> <span class="visible-xs">CIE</span></a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar cie-navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="dashboard-link pull-right visible-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav cie-nav navbar-nav">
+              <li><a href="/">Get Started</a></li>
+              <li><a href="/General/General/Learn">Learn</a></li>
+              <li><a href="/General/General/Community">Community</a></li>
+              <li><a href="/General/General/Help/Index">Help</a></li>
+              <a class="dashboard-link navbar-right hidden-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap bg-brand-gray-lt">
+      <div class="container-fluid">
+        <div class="full-height">
+          <div class="container">
+            <div class="col-md-12">
+              <div class="default-banner">
+                <div class="banner-line">
+                  <span class="text-center txt-brand-gray-dk">Set <a href="javascript:void(0)" ng-click="SetAsDefault()"><span class="icons icon-dashboard"></span> My Dashboard</a> as home.</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <section id="section-1" class="col-md-12">
+                <div class="tile-container">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="panel panel-cie">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Whats New</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col-md-12">
+                            <h3 class="txt-brand-blue">Title of Content Here</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                          </div>
+                          <div class="col-md-12">
+                            <h3 class="txt-brand-blue">Title of Content Here</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="panel panel-cie">
+                        <div class="panel-heading">
+                          <ul class="button-list pull-right">
+                            <li>
+                              <a href="#" class="brand-btn3">View All</a>
+                            </li>
+                            <li>
+                              <a class="brand-btn-text"><span class="icons icon-plus"></span>CREATE SESSION</a>
+                            </li>
+                          </ul>
+                          <h3 class="panel-title">MY SESSIONS</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col-md-4">
+                            <img src="https://placehold.it/200" alt="graph data" class="img-responsive center-block">
+                          </div>
+                          <div class="col-md-4">
+                            <img src="https://placehold.it/200" alt="graph data" class="img-responsive center-block">
+                          </div>
+                          <div class="col-md-4">
+                            <img src="https://placehold.it/200" alt="graph data" class="img-responsive center-block">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="panel panel-cie">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                          <h3 class="panel-title">DATA ANALYTICS</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="col-md-12">
+                            <h3>Title of Conent Here</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="panel panel-cie">
+                        <div class="panel-heading">
+                          <div class="pull-right">
+                            <a href="#" class="brand-btn-text">View All</a> |
+                            <a class="brand-btn-text brand-btn-create-session"><span class="icons icon-plus"></span>CREATE TICKET</a>
+                          </div>
+                          <h3 class="panel-title">MY TICKETS</h3>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table cie-table table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th>NAME <span class="icons icon-filter pull-right"></span></th>
+                                <th>DATE CREATED <span class="icons icon-filter pull-right"></th>
+                              <th>STATUS <span class="icons icon-filter pull-right"></th>
+                              <th>ACTIONS</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <span class="icons icon-notfavorited"></span> Content File name.zip
+                                  </td>
+                                  <td>1/1/15 7:57 PM</td>
+                                  <td>Lorem ipsum dolor sit amet.</td>
+                                  <td>
+                                    <ul class="list-inline">
+                                      <li>
+                                        <span class="icons icon-link"></span>
+                                      </li>
+                                      <li>
+                                        <span class="icons icon-pin"></span>
+                                      </li>
+                                    </ul>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="icons icon-notfavorited"></span> Content File name 2.zip
+                                </td>
+                                <td>
+                                  1/1/15 7:57 PM
+                                </td>
+                                <td>Lorem ipsum dolor sit amet.</td>
+                                <td>
+                                  <ul class="list-inline">
+                                    <li>
+                                      <span class="icons icon-link"></span>
+                                    </li>
+                                    <li>
+                                      <span class="icons icon-pin"></span>
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="panel panel-cie">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                          <h3 class="panel-title">MY RESOURCES</h3>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table cie-table table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th>NAME <span class="icons icon-filter pull-right"></span></th>
+                                <th>ACTIONS</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <span class="icons icon-favorited"></span> Content File name.zip
+                                </td>
+                                <td>
+                                  <ul class="list-inline">
+                                    <li>
+                                      <span class="icons icon-link"></span>
+                                    </li>
+                                    <li>
+                                      <span class="icons icon-pin"></span>
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="icons icon-favorited"></span> Content File name 2.zip
+                                </td>
+                                <td>
+                                  <ul class="list-inline">
+                                    <li>
+                                      <span class="icons icon-link"></span>
+                                    </li>
+                                    <li>
+                                      <span class="icons icon-pin"></span>
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="panel panel-cie">
+                        <div class="panel-heading">
+                          <div class="pull-right">
+                            <a href="#" class="brand-btn-text">View All</a> |
+                            <a class="brand-btn-text brand-btn-create-session"><span class="icons icon-plus"></span>CREATE SESSION</a>
+                          </div>
+                          <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="table cie-table table-striped table-hover">
+                            <thead>
+                              <tr>
+                                <th>NAME <span class="icons icon-filter pull-right"></span></th>
+                                <th>DATE CREATED <span class="icons icon-filter pull-right"></th>
+                              <th>STATUS <span class="icons icon-filter pull-right"></th>
+                              <th>ACTIONS</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <span class="icons icon-notfavorited"></span> Content File name.zip
+                                  </td>
+                                  <td>1/1/15 7:57 PM</td>
+                                  <td>Lorem ipsum dolor sit amet.</td>
+                                  <td>
+                                    <ul class="list-inline">
+                                      <li>
+                                        <span class="icons icon-link"></span>
+                                      </li>
+                                      <li>
+                                        <span class="icons icon-pin"></span>
+                                      </li>
+                                    </ul>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <span class="icons icon-notfavorited"></span> Content File name 2.zip
+                                </td>
+                                <td>
+                                  1/1/15 7:57 PM
+                                </td>
+                                <td>Lorem ipsum dolor sit amet.</td>
+                                <td>
+                                  <ul class="list-inline">
+                                    <li>
+                                      <span class="icons icon-link"></span>
+                                    </li>
+                                    <li>
+                                      <span class="icons icon-pin"></span>
+                                    </li>
+                                  </ul>
+                                </td>
+                              </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <ul class="footer-nav list-inline">
+            <li><a href="/SessionModel/CustomerInquiry/index">CONTACTS US</a></li>
+            <li><a href="http://www.microsoft.com/privacystatement/en-us/office/default.aspx">PRIVACY &amp; COOKIES</a></li>
+            <li class="ft-nav-last"><a target="_blank" href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx">TERMS OF USE</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pull-right mt-10">
+            <img src="content/images/microsoft-logo.png" alt="Microsoft logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</html>

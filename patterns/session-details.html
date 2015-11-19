@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SESSION Deatils</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="stylesheet" href="css/vdw-branding.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header ng-controller="HeaderController">
+      <nav class="navbar cie-header" role="navigation">
+        <div class="container">
+          <div class="pull-right">
+            <ul class="list-inline">
+              <li><a href="#"><span class="sr-only">Notifications</span> <span class="icons icon-notification"></span></a></li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">
+                  <mscieuploader block-size="2048" retries="4" retry-backoff="4"></mscieuploader>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="sr-only">Profile Info</span> <span class="icons icon-profile"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-header">
+            <a class="navbar-brand cie-brand" href="#"><span class="hidden-xs">Customer Immersion Experience</span> <span class="visible-xs">CIE</span></a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar cie-navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="dashboard-link pull-right visible-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav cie-nav navbar-nav">
+              <li><a href="/">Get Started</a></li>
+              <li><a href="/General/General/Learn">Learn</a></li>
+              <li><a href="/General/General/Community">Community</a></li>
+              <li><a href="/General/General/Help/Index">Help</a></li>
+              <a class="dashboard-link navbar-right hidden-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap bg-brand-gray-lt">
+      <div class="container-fluid">
+        <div class="full-height">
+          <div class="container">
+            <h1 class="text-center">Session Details</h1>
+            <a class="brand-btn-text brand-btn-back"><span class="icons icon-back"></span>Back</a>
+            <div class="row">
+              <div class="tile-container">
+                <div class="col-md-12 col-lg-8 col-lg-offset-2">
+                  <div class="panel panel-cie">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                      <h3>SESSION INFORMATION</h3>
+                    </div>
+                    <div class="cie-list-group list-group">
+                      <div class="list-group-item">
+                        <a class="brand-btn3 dark pull-right">Update</a>
+                        <h4 class="list-group-item-heading"><span class="icons icon-added"></span>  NAME <small class="txt-brand-gray-md">Lorem ipsum dolor sit.</small></h4>
+                      </div>
+                      <div class="list-group-item">
+                        <a class="brand-btn3 dark pull-right">Update</a>
+                        <h4 class="list-group-item-heading"><span class="icons icon-added"></span> DATE &AMP; TIME <small class="txt-brand-gray-md">Lorem ipsum dolor sit.</small></h4>
+                      </div>
+                      <div class="list-group-item">
+                        <a class="brand-btn3 dark pull-right">Update</a>
+                        <h4 class="list-group-item-heading"><span class="icons icon-added"></span> LOCATION <small class="txt-brand-gray-md">Lorem ipsum dolor sit.</small></h4>
+                      </div>
+                      <div class="list-group-item">
+                        <a class="brand-btn3 dark pull-right">Update</a>
+                        <h4 class="list-group-item-heading"><span class="icons icon-added"></span> INDUSTRY <small class="txt-brand-gray-md">Lorem ipsum dolor sit.</small></h4>
+                      </div>
+                      <button type="button" class="list-group-item collapsed" data-toggle="collapse" data-target="#details-dropdown" aria-expanded="false">
+                        <h4 class="list-group-item-heading">DETAILS <span class="icons icon-filterdown"></span></h4>
+                      </button>
+                      <div class="collapse" id="details-dropdown">
+                        <ul class="details-list">
+                          <li>
+                            <p>GEOGRAPHY <small class="txt-brand-gray-md">Lorem ipsum dolor.</small></p>
+                          </li>
+                          <li>
+                            <p>NUMBER OF ATTENDEES <small class="txt-brand-gray-md">Lorem ipsum dolor.</small></p>
+                          </li>
+                          <li>
+                            <p>INFLUENCED REVENUE <small class="txt-brand-gray-md">Lorem ipsum dolor.</small></p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-cie">
+                    <div class="panel-heading">
+                      <h3>SESSION NOTES</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-lg-12">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, fugit nihil nesciunt vel esse numquam consequatur quasi quia ab, obcaecati excepturi consectetur praesentium totam molestiae vitae sapiente non expedita consequuntur quis dignissimos aperiam! Consequatur soluta deleniti architecto, nulla, amet suscipit!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-cie">
+                    <div class="panel-heading">
+                      <div class="form-group col-lg-4 pull-right">
+                        <input type="text" class="" placeholder="code displayed here">
+                      </div>
+                      <h3>Survey <small> Copy and paste code to begin your survey.</small>
+                  </h3>
+                    </div>
+                  </div>
+                  <div class="panel panel-cie">
+                    <div class="panel-heading">
+                      <h3>Additional Options</h3>
+                    </div>
+                    <div class="cie-list-group list-group">
+                      <button type="button" class="list-group-item collapsed" data-toggle="collapse" data-target="#facility-dropdown" aria-expanded="false">
+                        <h4 class="list-group-item-heading">FACILITY
+                  <span class="icons icon-filterdown"></span>
+                  </button>
+                  <div class="collapse" id="facility-dropdown">
+                    <ul class="details-list">
+                      <li>
+                        <a href="#">Resource Name Here</a>
+                      </li>
+                      <li>
+                        <a href="#">Resource Name Here</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <button type="button" class="list-group-item collapsed" data-toggle="collapse" data-target="#facilitators-dropdown" aria-expanded="false">
+                  <h4 class="list-group-item-heading">FACILITATORS
+                  <span class="icons icon-filterdown"></span>
+                  </h4>
+                      </button>
+                      <div class="collapse" id="facilitators-dropdown">
+                        <ul class="details-list">
+                          <li>
+                            <a href="#">Resource Name Here</a>
+                          </li>
+                          <li>
+                            <a href="#">Resource Name Here</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <button type="button" class="list-group-item" data-toggle="collapse" data-target="#equipment-dropdown" aria-expanded="false">
+                        <h4 class="list-group-item-heading">EQUIPMENT <span class="icons icon-filterdown"></span></h4>
+                      </button>
+                      <div class="collapse" id="equipment-dropdown">
+                        <ul class="details-list">
+                          <li><a href="#">Attachment Name Here</a></li>
+                          <li><a href="#">Attachment Name Here</a></li>
+                          <li><a href="#">Attachment Name Here</a></li>
+                        </ul>
+                      </div>
+                      <button type="button" class="list-group-item collapsed" data-toggle="collapse" data-target="#accounts-dropdown" aria-expanded="false">
+                        <h4 class="list-group-item-heading">ACCOUNTS
+                  <span class="icons icon-filterdown"></span>
+                  </h4>
+                      </button>
+                      <div class="collapse" id="accounts-dropdown">
+                        <ul class="details-list">
+                          <li>
+                            <a href="#">Resource Name Here</a>
+                          </li>
+                          <li>
+                            <a href="#">Resource Name Here</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <button type="button" class="list-group-item" data-toggle="collapse" data-target="#resources-dropdown" aria-expanded="false">
+                        <h4 class="list-group-item-heading">RESOURCES <span class="icons icon-filterdown"></span></h4>
+                      </button>
+                      <div class="collapse" id="resources-dropdown">
+                        <ul class="details-list">
+                          <li><a href="#">Attachment Name Here</a></li>
+                          <li><a href="#">Attachment Name Here</a></li>
+                          <li><a href="#">Attachment Name Here</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <ul class="footer-nav list-inline">
+            <li><a href="/SessionModel/CustomerInquiry/index">CONTACTS US</a></li>
+            <li><a href="http://www.microsoft.com/privacystatement/en-us/office/default.aspx">PRIVACY &amp; COOKIES</a></li>
+            <li class="ft-nav-last"><a target="_blank" href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx">TERMS OF USE</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pull-right mt-10">
+            <img src="content/images/microsoft-logo.png" alt="Microsoft logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</html>

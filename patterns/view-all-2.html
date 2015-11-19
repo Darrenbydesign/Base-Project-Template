@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View All</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="sass/themes/css/vdw-branding.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  </head>
+
+  <body>
+    <header ng-controller="HeaderController">
+      <nav class="navbar cie-header" role="navigation">
+        <div class="container">
+          <div class="pull-right">
+            <ul class="list-inline">
+              <li><a href="#"><span class="sr-only">Notifications</span> <span class="icons icon-notification"></span></a></li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">
+                  <mscieuploader block-size="2048" retries="4" retry-backoff="4"></mscieuploader>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="sr-only">Profile Info</span> <span class="icons icon-profile"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-header">
+            <a class="navbar-brand cie-brand" href="#"><span class="hidden-xs">Customer Immersion Experience</span> <span class="visible-xs">CIE</span></a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar cie-navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="dashboard-link pull-right visible-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav cie-nav navbar-nav">
+              <li><a href="/">Get Started</a></li>
+              <li><a href="/General/General/Learn">Learn</a></li>
+              <li><a href="/General/General/Community">Community</a></li>
+              <li><a href="/General/General/Help/Index">Help</a></li>
+              <a class="dashboard-link navbar-right hidden-xs" href="/General/General/Dashboard"><span class="icons icon-dashboard"></span> My Dashboard</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap bg-brand-gray-lt">
+      <div class="container-fluid">
+        <div class="full-height">
+          <h1 class="text-center">View All Title Goes Here</h1>
+          <div class="container">
+            <div class="row">
+              <div class="tile-container">
+                <div class="col-md-12">
+                  <div class="panel panel-cie">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                      <button class="navbar-toggle pull-right" type="button" data-toggle="collapse" data-target=".filter-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle Filter navigation</span> FILTERS <span class="icons icon-filterdown"></span>
+                      </button>
+                      <h3>Panel heading</h3>
+                      <div class="collapse navbar-collapse filter-nav">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                          <div class="transparent-select-shell">
+                            <select>
+                              <option>custom select list styling</option>
+                              <option>option 2</option>
+                              <option>option 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                          <form class="search">
+                            <input type="text" placeholder="Search...">
+                            <input type="submit" class="icons icon-search" value="">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Table -->
+                    <div class="table-responsive">
+                      <table class="table cie-table table-hover">
+                        <thead>
+                          <tr>
+                            <th>TICKET #<span class="icons icon-filter pull-right"></span></th>
+                            <th>NAME <span class="icons icon-filter pull-right"></span></th>
+                            <th>COMMENTS <span class="icons icon-filter pull-right"></span></th>
+                            <th>STATUS <span class="icons icon-filter pull-right"></span></th>
+                            <th>CREATED <span class="icons icon-filter pull-right"></span></th>
+                            <th>ACTIONS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-created"></span> CREATED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-reopened"></span> RE-OPENED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-pending"></span> PENDING</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-closed"></span> CLOSED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-solution"></span> SOLUTION SUGGESTED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-more-info"></span> MORE INFO</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-closed"></span> CLOSED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>13008-15319</td>
+                            <td><a href="#">Lorem ipsum.</a></td>
+                            <td><span class="label label-primary">New</span> Earum, aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                            <td><span class="status status-opened"></span> OPENED</td>
+                            <td>09/01/15 12:00 AM</td>
+                            <td>
+                              <ul class="list-inline">
+                                <li><span class="icons icon-download"></span></li>
+                                <li><span class="icons icon-pin"></span></li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="text-center">
+                        <ul class="pagination cie-pagination">
+                          <li><a href="#"><span class="icons icon-arrowback"></span> Prev</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">Next <span class="icons icon-arrownext"></span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <ul class="footer-nav list-inline">
+            <li><a href="/SessionModel/CustomerInquiry/index">CONTACTS US</a></li>
+            <li><a href="http://www.microsoft.com/privacystatement/en-us/office/default.aspx">PRIVACY &amp; COOKIES</a></li>
+            <li class="ft-nav-last"><a target="_blank" href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx">TERMS OF USE</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pull-right mt-10">
+            <img src="content/images/microsoft-logo.png" alt="Microsoft logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</html>
