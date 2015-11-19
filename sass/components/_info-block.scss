@@ -6,7 +6,7 @@
 */
 
 .info-block-container {
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(column, wrap);
   flex-direction: column;
   flex-wrap: wrap;

@@ -10,7 +10,7 @@
 }
 
 .workloads-container {
-    @include flexbox();
+    @include flexbox;
     flex-flow: row wrap;
     align-items: flex-start;
     justify-content: space-around;

@@ -448,125 +448,123 @@ select {
     text-decoration: none; }
 
 /*breadcrumb nav styles*/
+.flex-breadcrumb li a:after, .flex-breadcrumb li a:before {
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100%;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent; }
+
 .flex-breadcrumb {
   padding: 0;
   margin-bottom: 0;
   list-style: none;
   overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
+  -webkit-box-pack: flex-start;
+  -moz-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
   align-items: stretch;
   z-index: 5; }
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (max-width: 768px) {
-  .flex-breadcrumb {
-    display: flex;
-    flex-flow: column; } }
-.flex-breadcrumb li {
-  display: flex;
-  flex: 1;
-  position: relative;
-  margin-left: 3px; }
-
-@media only screen and (max-width: 768px) {
   .flex-breadcrumb li {
-    margin-left: 0;
-    width: 100%; } }
-.flex-breadcrumb li:first-child {
-  margin-left: 0; }
-
-.flex-breadcrumb li a {
-  color: white;
-  text-decoration: none;
-  padding: 20px 15px;
-  background: #0078d7;
-  background: rgba(0, 120, 215, 0.8);
-  position: relative;
-  text-align: center;
-  vertical-align: baseline;
-  width: 100%; }
-
-/* iPads (portrait) ----------- */
-@media only screen and (max-width: 768px) {
-  .flex-breadcrumb li a {
-    border-bottom: 3px solid white; } }
-@media only screen and (min-width: 1224px) {
-  .flex-breadcrumb li a {
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: left; } }
-.flex-breadcrumb li a:after {
-  content: ' ';
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-  border-left: 20px solid rgba(0, 120, 215, 0.8);
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-  left: 100%;
-  z-index: 2; }
-
-.flex-breadcrumb li a:before {
-  content: ' ';
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-  border-left: 20px solid white;
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-  margin-left: 3px;
-  left: 100%;
-  z-index: 1; }
-
-/* iPads (portrait) ----------- */
-@media only screen and (max-width: 768px) and (max-width: 1024px) {
-  .flex-breadcrumb li a:after {
-    border-top: 0 solid transparent;
-    border-left: 0 solid rgba(0, 120, 215, 0.8);
-    border-bottom: 0 solid transparent; }
-
-  .flex-breadcrumb li a:before {
-    border-top: 0 solid transparent;
-    border-left: 0 solid white;
-    border-bottom: 0 solid transparent; } }
-/* Desktops and laptops ----------- */
-@media only screen and (min-width: 1366px) {
-  .flex-breadcrumb li a:after {
-    border-top: 53px solid transparent;
-    border-left: 22px solid rgba(0, 120, 215, 0.8);
-    border-bottom: 34px solid transparent; }
-
-  .flex-breadcrumb li a:before {
-    border-top: 53px solid transparent;
-    border-left: 22px solid white;
-    border-bottom: 34px solid transparent; } }
-.flex-breadcrumb li:first-child a {
-  padding-left: 0; }
-
-.flex-breadcrumb li a:hover {
-  background: #4d4d4d; }
-
-.flex-breadcrumb li a:hover:after {
-  border-left-color: #4d4d4d !important; }
-
-.flex-breadcrumb li:last-child a:after {
-  border-left: 0px solid #4d4d4d; }
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    margin-left: 3px; }
+    .flex-breadcrumb li:first-child {
+      margin-left: 0; }
+      .flex-breadcrumb li:first-child a {
+        padding-left: 0; }
+    .flex-breadcrumb li:last-child a:after {
+      border-left: 0px solid #4d4d4d; }
+    .flex-breadcrumb li a {
+      color: white;
+      text-decoration: none;
+      padding: 20px 15px;
+      background: #0078d7;
+      background: rgba(0, 120, 215, 0.8);
+      position: relative;
+      text-align: center;
+      vertical-align: baseline;
+      width: 100%; }
+      .flex-breadcrumb li a:hover {
+        background: #4d4d4d; }
+        .flex-breadcrumb li a:hover:after {
+          border-left-color: #4d4d4d !important; }
+      .flex-breadcrumb li a:after {
+        border-left: 20px solid rgba(0, 120, 215, 0.8);
+        z-index: 2; }
+      .flex-breadcrumb li a:before {
+        border-left: 20px solid white;
+        margin-left: 3px;
+        z-index: 1; }
+  @media (min-width: 64em) {
+    .flex-breadcrumb {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: column wrap; }
+      .flex-breadcrumb li {
+        margin-left: 0;
+        width: 100%; }
+        .flex-breadcrumb li a {
+          border-bottom: 3px solid white; }
+          .flex-breadcrumb li a:after {
+            border-top: 0 solid transparent;
+            border-left: 0 solid rgba(0, 120, 215, 0.8);
+            border-bottom: 0 solid transparent; }
+          .flex-breadcrumb li a:before {
+            border-top: 0 solid transparent;
+            border-left: 0 solid white;
+            border-bottom: 0 solid transparent; } }
+  @media (min-width: 90em) {
+    .flex-breadcrumb li a {
+      padding-left: 30px;
+      padding-right: 30px;
+      text-align: left; }
+      .flex-breadcrumb li a:after {
+        border-top: 53px solid transparent;
+        border-left: 22px solid rgba(0, 120, 215, 0.8);
+        border-bottom: 34px solid transparent; }
+      .flex-breadcrumb li a:before {
+        border-top: 53px solid transparent;
+        border-left: 22px solid white;
+        border-bottom: 34px solid transparent; } }
 
 .flex-title {
   font-size: 22px;
+  font-size: 1.375em;
   display: inline-block; }
+  @media (min-width: 64em) {
+    .flex-title {
+      margin-left: 15px; } }
 
-@media only screen and (min-width: 1224px) {
-  .flex-title {
-    margin-left: 15px; } }
 .masthead-info-container {
   color: white; }
   @media only screen and (min-width: 1200px) {

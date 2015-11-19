@@ -7,7 +7,7 @@
 */
 
 .flex-header {
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(column, wrap);
   @include justify-content(flex-start);
   align-self: center;
@@ -40,7 +40,7 @@
 /// Flexible container 
 /// this is used to center something no matter what the browser width is. Hooray!
 .flex-container {
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(row, wrap);
   flex-wrap: wrap;
   @include justify-content(center);
@@ -51,7 +51,7 @@
 
 %flex-list-base {
   list-style: none;
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(column, wrap);
   /// align-content: center;
   margin: 0;
@@ -120,20 +120,20 @@
 }
 
 .solo-wizard-step {
-  @include flexbox();
+  @include flexbox;
   @include justify-content(flex-end);
   align-items: center;
 }
 
 .flex-nav {
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(row, wrap);
   @include justify-content(flex-end);
   @include align-items(center);
   >li {
     margin: 0;
     padding: 10px 15px;
-    @include flexbox();
+    @include flexbox;
     &:hover {
       background: lighten($brand-dark, 15%);
     }

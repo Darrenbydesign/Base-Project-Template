@@ -1,6 +1,5 @@
 ////
 /// @group Alternate-Theme
-/// @author Darren Sorrels
 ////
 
 //==============================
@@ -12,7 +11,7 @@ $blue: #0078D7;
 ///
 $gray: #4d4d4d;
 ///
-$purple:#5C005C;
+$purple: #5C005C;
 ///
 $gray-light: lighten($gray, 15%);
 ///
@@ -35,28 +34,29 @@ $corp-color-second-light: lighten($corp-color-second, 15%);
 //==============================
 ///Typography variables
 //==============================
-///
+
+/// Base Font Stack
 $segoe-UI-regular: (
   'Segoe UI', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   );
-///
+/// Header Font Stack
 $segoe-UI-light: (
   'Segoe UI Light', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   );
-///
+/// Sub Header Font Stack
 $segoe-UI-semilight: (
   'Segoe UI Semilight', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   );
-///
+/// Sub-Sub-header/Caption Font Stack
 $segoe-UI-semibold: (
   'Segoe UI Semibold', 
   'Helvetica', 
@@ -72,14 +72,16 @@ $base-font-family: $segoe-UI-regular;
 $base-font-color: $gray;
 
 //==============================
-///Layout variables
+//Layout variables
 //==============================
 
 /// Borders: Default border-color for containers and other modules using the default theme goes here.
 $base-border-radius: 0px;
-///
+
+/// border-radius variable for circle
 $rounded-border-radius: 50%;
-///
+
+/// base border color used for default theme
 $base-border-color: $gray-light;
 
 
@@ -94,7 +96,7 @@ $footer-height: 70px;
 $margin-bottom: $footer-height; 
 
 //==============================
-///Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
+//Image variables - Images instead of writing paths to images in the partials make them variables in order keep consistent pathing and easily change out images.
 //==============================
 
 // This is where you import the partial file and default config variables this must be placed at the end of the theme file

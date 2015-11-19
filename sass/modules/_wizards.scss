@@ -20,7 +20,7 @@
 }
 
 .wizard-form {
-  @include flexbox();
+  @include flexbox;
   @include justify-content(center);
   @include flex-flow(column, wrap);
   @include flexpoint-sm {
@@ -41,7 +41,7 @@
 }
 
 .wizard-button-list {
-  @include flexbox();
+  @include flexbox;
   @include flex-flow(column, wrap);
   @include justify-content(center);
   @include flexpoint-sm {
@@ -86,7 +86,7 @@
     @include flex-flow(row, wrap);
     @include justify-content(center);
   }
-  @include flexbox();
+  @include flexbox;
   @include justify-content(center);
   @include flex-flow(column, wrap);
   flex-direction: column;
@@ -94,7 +94,7 @@
   margin: 0;
   padding: 0;
   li {
-    @include flexbox();
+    @include flexbox;
     @include flexpoint-sm {
       width: 50%;
     }
@@ -111,7 +111,7 @@
 }
 
 .wizard-block {
-  @include flexbox();
+  @include flexbox;
   @include flex-direction(column);
   @include transition(border 0.3s ease-in);
   @include flexpoint-sm {
@@ -132,7 +132,7 @@
 }
 
 .wizard-block-content {
-  @include flexbox();
+  @include flexbox;
   @include flex(1 0 auto);
   @include flex-direction(column);
   color: $gray-dark;

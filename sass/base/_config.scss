@@ -39,28 +39,28 @@ $corp-color-second-light: tint($corp-color-second, 15%) !default;
 ///Typography variables
 //==============================
 
-///
+/// Base Font Stack
 $segoe-UI-regular: (
   'Segoe UI', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
-///
+/// Header Font Stack
 $segoe-UI-light: (
   'Segoe UI Light', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
-///
+/// Sub Header Font Stack
 $segoe-UI-semilight: (
   'Segoe UI Semilight', 
   'Helvetica', 
   'Arial', 
   sans-serif,
   ) !default;
-///
+/// Sub-Sub-header/Caption Font Stack
 $segoe-UI-semibold: (
   'Segoe UI Semibold', 
   'Helvetica', 

@@ -1,153 +1,121 @@
 /*breadcrumb nav styles*/
 
+%flex-breadcrumb-pseudo-base {
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100%;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
 .flex-breadcrumb {
-    padding: 0;
-    margin-bottom: 0;
-    list-style: none;
-    overflow: hidden;
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
-    align-items: stretch;
-    z-index: 5;
-}
-/* iPads (portrait and landscape) ----------- */
-
-@media only screen and (max-width: 768px) {
-    .flex-breadcrumb {
-        display: flex;
-        flex-flow: column;
-    }
-}
-
-.flex-breadcrumb li {
-    display: flex;
-    flex: 1;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  overflow: hidden;
+  @include flexbox;
+  @include flex-flow(row, wrap);
+  @include justify-content(flex-start);
+  @include align-items(stretch);
+  z-index: 5;
+  li {
+    @include flexbox;
+    @include flex(1);
     position: relative;
     margin-left: 3px;
-}
-
-@media only screen and (max-width: 768px) {
-    .flex-breadcrumb li {
-        margin-left: 0;
-        width: 100%;
+    &:first-child {
+      margin-left: 0;
+      a {
+        padding-left: 0;
+      }
     }
-}
-
-.flex-breadcrumb li:first-child {
-    margin-left: 0;
-}
-
-.flex-breadcrumb li a {
-    color: $white;
-    text-decoration: none;
-    padding: 20px 15px;
-    background: $corp-color;
-    background: rgba($corp-color, 0.8);
-    position: relative;
-    text-align: center;
-    vertical-align: baseline;
-    width: 100%;
-}
-/* iPads (portrait) ----------- */
-
-@media only screen and (max-width: 768px) {
-    .flex-breadcrumb li a {
+    &:last-child {
+      a {
+        &:after {
+          border-left: 0px solid rgba(77, 77, 77, 1);
+        }
+      }
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+      padding: 20px 15px;
+      background: $corp-color;
+      background: rgba($corp-color, 0.8);
+      position: relative;
+      text-align: center;
+      vertical-align: baseline;
+      width: 100%;
+      &:hover {
+        background: rgba(77, 77, 77, 1);
+        &:after {
+          border-left-color: rgba(77, 77, 77, 1) !important;
+        }
+      }
+      &:after {
+        @extend %flex-breadcrumb-pseudo-base;
+        border-left: 20px solid rgba($corp-color, 0.8);
+        z-index: 2;
+      }
+      &:before {
+        @extend %flex-breadcrumb-pseudo-base;
+        border-left: 20px solid $white;
+        margin-left: 3px;
+        z-index: 1;
+      }
+    }
+  }
+  @include flexpoint-md {
+    @include flexbox;
+    @include flex-flow(column, wrap);
+    li {
+      margin-left: 0;
+      width: 100%;
+      a {
         border-bottom: 3px solid $white;
+        &:after {
+          border-top: 0 solid transparent;
+          border-left: 0 solid rgba($corp-color, 0.8);
+          border-bottom: 0 solid transparent;
+        }
+        &:before {
+          border-top: 0 solid transparent;
+          border-left: 0 solid $white;
+          border-bottom: 0 solid transparent;
+        }
+      }
     }
-}
-
-@media only screen and (min-width: 1224px) {
-    .flex-breadcrumb li a {
+  }
+  @include flexpoint-lg {
+    li {
+      a {
         padding-left: 30px;
         padding-right: 30px;
         text-align: left;
+        &:after {
+          border-top: 53px solid transparent;
+          border-left: 22px solid rgba($corp-color, 0.8);
+          border-bottom: 34px solid transparent;
+        }
+        &:before {
+          border-top: 53px solid transparent;
+          border-left: 22px solid $white;
+          border-bottom: 34px solid transparent;
+        }
+      }
     }
-}
-
-.flex-breadcrumb li a:after {
-    content: ' ';
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 20px solid rgba($corp-color, 0.8);
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    left: 100%;
-    z-index: 2;
-}
-
-.flex-breadcrumb li a:before {
-    content: ' ';
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 20px solid $white;
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    margin-left: 3px;
-    left: 100%;
-    z-index: 1;
-}
-/* iPads (portrait) ----------- */
-
-@media only screen and (max-width: 768px) and (max-width: 1024px) {
-    .flex-breadcrumb li a:after {
-        border-top: 0 solid transparent;
-        border-left: 0 solid rgba($corp-color, 0.8);
-        border-bottom: 0 solid transparent;
-    }
-    .flex-breadcrumb li a:before {
-        border-top: 0 solid transparent;
-        border-left: 0 solid $white;
-        border-bottom: 0 solid transparent;
-    }
-}
-/* Desktops and laptops ----------- */
-
-@media only screen and (min-width: 1366px) {
-    .flex-breadcrumb li a:after {
-        border-top: 53px solid transparent;
-        border-left: 22px solid rgba($corp-color, 0.8);
-        border-bottom: 34px solid transparent;
-    }
-    .flex-breadcrumb li a:before {
-        border-top: 53px solid transparent;
-        border-left: 22px solid $white;
-        border-bottom: 34px solid transparent;
-    }
-}
-
-.flex-breadcrumb li:first-child a {
-    padding-left: 0;
-}
-
-.flex-breadcrumb li a:hover {
-    background: rgba(77, 77, 77, 1);
-}
-
-.flex-breadcrumb li a:hover:after {
-    border-left-color: rgba(77, 77, 77, 1) !important;
-}
-
-.flex-breadcrumb li:last-child a:after {
-    border-left: 0px solid rgba(77, 77, 77, 1);
+  }
 }
 
 .flex-title {
-    font-size: 22px;
-    display: inline-block;
-}
-
-@media only screen and (min-width: 1224px) {
-    .flex-title {
-        /// font-size: 24px;
-        margin-left: 15px;
-    }
+  @include font-size(22px);
+  display: inline-block;
+  @include flexpoint-md {
+    margin-left: 15px;
+  }
 }

@@ -21,6 +21,16 @@
   }
 }
 
+/// Helper to clear inner floats
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
 /// Simple mixin for border-radius changes. just include this mixin and provide a value and you're good to go.
 ///@param {aplhanum} $radius - value that desired for border-radius
 @mixin border-radius($radius) {
@@ -30,6 +40,7 @@
 }
 
 ///Variable used for the button mixin map values
+///@type Map
 $Placeholder-Selectors: ();
 /// Button mixin creates a button for you. all it needs is a color declararation added for the background yay! 
 /// No more using the extend class on the button each time bloating the output CSS.
@@ -138,6 +149,7 @@ $mq-xlarge: 1600px;
 }
 
 /// Define the upper and lower range of the media queries programatically for more complex media queries
+
 $fq-xlarge: cb(1920px) !default;
 $fq-large: cb(1440px) !default;
 $fq-medium: cb(1024px) !default;
