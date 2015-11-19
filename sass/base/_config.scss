@@ -101,6 +101,24 @@ $margin-bottom: $footer-height !default;
 /// paths and easily change out images in large css files.
 //==============================
 $arrow-right: '../images/icons/svg/arrow-right-icon.svg' !default;
+$icon-plus:'../images/icons/plus-icon.png' !default;
+$icon-thumb-print:'../images/icons/identity-detail icon.png' !default;
+$icon-app-management:'../images/icons/application management-detail icon.png' !default;
+$icon-productivity:'../images/icons/productivity-detail icon.png' !default;
+$icon-security:'../images/icons/data security-detail icon.png' !default;
+
+$home-bg: "/content/images/OFF14_Eve_LoganA_Max_Mercedes_02.png" !default;
+$icons: "/content/images/icons.png" !default;
+$learn-bg: "/content/images/about-cie.jpg" !default;
+$community-bg: "/content/images/community.png" !default;
+$help-bg: "/content/images/masthead-image-4.png" !default;
+$get-started-girl: "/content/images/girl-on-computer.png" !default;
+$get-started-computer: "/content/images/hand-holding-computer.png" !default;
+$get-started-handshake: "/content/images/man-woman-shaking-hands.png" !default;
+$get-started-learn-more: "/content/images/learn-more-icon.png" !default;
+$get-started-help: "/content/images/help-icon.png" !default;
+$gs-help-bg: "/content/images/help-icon.png" !default;
+$gs-learn-bg: "/content/images/learn-more-icon.png" !default;
 
 /// NOTE: the value '!default' is used to define base values.
 ///If no value is given to a variable in another theme file the above values will be used instead of having an undeclared variable.

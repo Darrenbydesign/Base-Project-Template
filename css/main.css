@@ -364,7 +364,12 @@ select {
   font-size: 14px;
   font-size: 0.875em; }
 
-/*================ICON STYLES========================*/
+/*
+=================================================================== 
+ $Icons - Icons styles go here including the CIE spritesheet styles
+ as well as any new icons styles created
+===================================================================
+*/
 .ft-icon {
   display: inline-block;
   position: relative;
@@ -377,13 +382,242 @@ select {
   margin-left: 10px; }
 
 .arrow-icon {
-  background: url(../images/icons/SVG/arrow-right-icon.svg) no-repeat left; }
+  background: url("../images/icons/svg/arrow-right-icon.svg") no-repeat left; }
 
 .arrow-icon-alt {
-  background: url(../images/icons/SVG/arrow-right-icon-alt.svg) no-repeat left; }
+  background: url("../images/icons/svg/arrow-right-icon.svg") no-repeat left; }
 
 .arrow-icon-blue {
-  background: url(../images/icons/SVG/arrow-right-icon-blue.svg) no-repeat left; }
+  background: url("../images/icons/svg/arrow-right-icon.svg") no-repeat left; }
+
+.icons {
+  background-image: url("/content/images/icons.png");
+  background-size: 400px 600px;
+  display: block; }
+  .icons.icon-plus {
+    background-position: 0 0;
+    min-width: 14px;
+    min-height: 14px;
+    display: inline-block; }
+  .icons.icon-back {
+    background-position: 0 -50px;
+    min-width: 23px;
+    min-height: 23px;
+    display: inline-block;
+    vertical-align: middle; }
+  .icons.icon-forward {
+    background-position: 0 -50px;
+    min-width: 23px;
+    min-height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    transform: rotate(180deg); }
+  .icons.icon-pin {
+    background-position: -50px 0;
+    min-width: 16px;
+    min-height: 17px;
+    display: inline-block; }
+    .icons.icon-pin:hover {
+      background-position: -50px -50px; }
+  .icons.icon-unpin {
+    background-position: -100px 0;
+    min-width: 17px;
+    min-height: 17px;
+    display: inline-block; }
+    .icons.icon-unpin:hover {
+      background-position: -100px -50px; }
+  .icons.icon-download {
+    background-position: -150px 0;
+    min-width: 17px;
+    min-height: 15px;
+    display: inline-block; }
+    .icons.icon-download:hover {
+      background-position: -150px -50px; }
+  .icons.icon-link {
+    background-position: -200px 0;
+    min-width: 15px;
+    min-height: 16px;
+    display: inline-block; }
+    .icons.icon-link:hover {
+      background-position: -200px -50px; }
+  .icons.icon-trash {
+    background-position: -250px 0;
+    min-width: 19px;
+    min-height: 22px;
+    display: inline-block; }
+    .icons.icon-trash:hover {
+      background-position: -250px -50px; }
+  .icons.icon-email {
+    background-position: -350px 0;
+    min-width: 32px;
+    min-height: 24px;
+    display: inline-block; }
+    .icons.icon-email:hover {
+      background-position: -350px -50px; }
+  .icons.icon-search {
+    background-position: 0 -150px;
+    min-width: 17px;
+    min-height: 16px;
+    display: inline-block; }
+    .icons.icon-search:hover {
+      background-position: 0 -200px; }
+  .icons.icon-added {
+    background-position: -300px 0;
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-block; }
+  .icons.icon-added-progress {
+    background-position: -300px -50px;
+    min-width: 19px;
+    min-height: 19px;
+    display: inline-block; }
+  .icons.icon-filter {
+    background-position: 0 -100px;
+    min-width: 13px;
+    min-height: 20px;
+    display: inline-block; }
+  .icons.icon-filterdown {
+    background-position: -150px -100px;
+    min-width: 12px;
+    min-height: 7px;
+    display: inline-block; }
+  .icons.icon-filterup {
+    background-position: -200px -100px;
+    min-width: 12px;
+    min-height: 7px;
+    display: inline-block; }
+  .icons.icon-arrowback {
+    background-position: -50px -100px;
+    min-width: 7px;
+    min-height: 12px;
+    display: inline-block; }
+  .icons.icon-arrownext {
+    background-position: -100px -100px;
+    min-width: 7px;
+    min-height: 12px;
+    display: inline-block; }
+  .icons.icon-gripper {
+    background-position: -250px -100px;
+    min-width: 16px;
+    min-height: 15px;
+    display: inline-block; }
+  .icons.icon-notfavorited {
+    background-position: -300px -100px;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block; }
+  .icons.icon-favorited {
+    background-position: -350px -100px;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block; }
+  .icons.icon-shield {
+    background-position: -100px -150px;
+    min-width: 35px;
+    min-height: 42px;
+    display: inline-block; }
+  .icons.icon-shield-sm {
+    background-size: 200px 300px;
+    background-position: -50px -75px;
+    min-width: 22px;
+    min-height: 24px;
+    display: inline-block; }
+  .icons.icon-arrowup {
+    background-position: -150px -150px;
+    min-width: 10px;
+    min-height: 18px;
+    display: inline-block; }
+  .icons.icon-arrowdown {
+    background-position: -200px -150px;
+    min-width: 10px;
+    min-height: 18px;
+    display: inline-block; }
+  .icons.icon-new {
+    background-position: -250px -150px;
+    min-width: 34px;
+    min-height: 17px;
+    display: inline-block; }
+  .icons.icon-alert {
+    background-position: -300px -150px;
+    min-width: 27px;
+    min-height: 22px;
+    display: inline-block; }
+  .icons.icon-dashboard {
+    background-position: -350px -150px;
+    min-width: 23px;
+    min-height: 14px;
+    display: inline-block; }
+  .icons.icon-arrowup-w {
+    background-position: -50px -200px;
+    min-width: 18px;
+    min-height: 10px;
+    display: inline-block; }
+  .icons.icon-arrowdown-w {
+    background-position: -100px -200px;
+    min-width: 18px;
+    min-height: 10px;
+    display: inline-block; }
+  .icons.icon-profile {
+    background-position: -150px -200px;
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-block;
+    vertical-align: middle; }
+  .icons.icon-play {
+    background-position: -225px -200px;
+    min-width: 58px;
+    min-height: 58px;
+    display: inline-block; }
+  .icons.icon-yammer {
+    background-position: -325px -200px;
+    min-width: 67px;
+    min-height: 58px;
+    display: inline-block; }
+  .icons.icon-session-regular {
+    background-position: 0 -275px;
+    min-width: 156px;
+    min-height: 84px;
+    display: inline-block; }
+  .icons.icon-session-quick {
+    background-position: -200px -275px;
+    min-width: 156px;
+    min-height: 84px;
+    display: inline-block; }
+  .icons.icon-learnmore {
+    background-position: 0 -400px;
+    min-width: 102px;
+    min-height: 130px;
+    display: inline-block; }
+  .icons.icon-needhelp {
+    background-position: -150px -400px;
+    min-width: 127px;
+    min-height: 130px;
+    display: inline-block; }
+  .icons.icon-notification {
+    background-position: -50px -150px;
+    min-width: 29px;
+    min-height: 33px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; }
+    .icons.icon-notification .count {
+      background: #0078d7;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 1px;
+      right: -9px;
+      -webkit-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 2px solid #5d5c5c;
+      font-family: "Segoe UI Semibold", "Helvetica", "Arial", sans-serif;
+      line-height: 14px;
+      font-size: 11px;
+      color: #5d5c5c;
+      text-align: center; }
 
 /* ===========$SVG Styles========================= */
 .test-svg {
@@ -564,6 +798,41 @@ select {
   @media (min-width: 64em) {
     .flex-title {
       margin-left: 15px; } }
+
+/*
+=================================================================== 
+ $MastHead - Mastheads are used when full screen images are needed
+ the image is used for titles or call to action page headers
+===================================================================
+*/
+.learn-bg {
+  background: linear-gradient(rgba(0, 120, 215, 0.8), rgba(0, 120, 215, 0.8)), url("/content/images/about-cie.jpg");
+  background-position: top center; }
+
+.help-bg {
+  background: linear-gradient(rgba(0, 120, 215, 0.8), rgba(0, 120, 215, 0.8)), url("/content/images/masthead-image-4.png");
+  background-position: center center; }
+
+.community-bg {
+  background: linear-gradient(90deg, rgba(0, 120, 215, 0.8), rgba(0, 120, 215, 0.8)), url("/content/images/community.png");
+  background-position: top center; }
+
+.learn-bg, .help-bg, .community-bg {
+  -webkit-background-blend-mode: multiply;
+  -moz-background-blend-mode: multiply;
+  -ms-background-blend-mode: multiply;
+  -o-background-blend-mode: multiply;
+  background-blend-mode: multiply;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px; }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .learn-bg, .help-bg, .community-bg {
+      height: 100%; } }
 
 .masthead-info-container {
   color: white; }

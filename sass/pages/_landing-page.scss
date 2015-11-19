@@ -70,7 +70,7 @@
     background: url('../images/icons/collaboration-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -79,7 +79,7 @@
     background: url('../images/icons/device management-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -88,7 +88,7 @@
     background: url('../images/icons/email-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -97,7 +97,7 @@
     background: url('../images/icons/communications-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -106,7 +106,7 @@
     background: url('../images/icons/identity-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -115,16 +115,16 @@
     background: url('../images/icons/application management-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
 
 .wkl-icon-7 {
-    background: url('../images/icons/productivity-detail icon.png') no-repeat center, $corp-color;
+    background: url($icon-productivity) no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
@@ -133,7 +133,7 @@
     background: url('../images/icons/data security-detail icon.png') no-repeat center, $corp-color;
     @extend %wkl-base;
     &:hover {
-        background: url('../images/icons/plus-icon.png') no-repeat center, $corp-color-dark;
+        background: url($icon-plus) no-repeat center, $corp-color-dark;
         @extend %wkl-base;
     }
 }
